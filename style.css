@@ -145,13 +145,13 @@ img {
 
 /* ---------- Hero Section ---------- */
 .hero {
-  min-height: 60vh;
-  /* Reduced from 100vh */
+  /* Removed min-height to pull content up */
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  /* Removed vertical centering of the entire block */
   justify-content: center;
-  padding: 80px 24px 40px;
-  /* Reduced top/bottom padding */
+  padding: 140px 24px 60px;
+  /* Reduced vertical whitespace, just enough to clear nav */
 }
 
 .hero-content {
