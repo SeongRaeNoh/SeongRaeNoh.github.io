@@ -592,8 +592,63 @@ img {
   }
 }
 
-@media (max-width: 380px) {
-  .nav-links {
+
+/* ---------- Awards & Service ---------- */
+.award-list,
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.award-item {
+  display: flex;
+  gap: 24px;
+}
+
+.award-year {
+  font-weight: 600;
+  color: var(--text-tertiary);
+  min-width: 42px;
+  flex-shrink: 0;
+  font-feature-settings: "tnum";
+}
+
+.award-content {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.award-content strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.award-detail {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+}
+
+.service-list {
+  list-style: none;
+}
+
+.service-list li {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.service-list strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .award-item {
     gap: 12px;
   }
 }
