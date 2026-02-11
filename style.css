@@ -293,8 +293,8 @@ img {
 
 /* ---------- About ---------- */
 .about-content {
-  max-width: 800px;
-  /* Increased from 640px */
+  max-width: 100%;
+  /* Changed from 800px to full width */
 }
 
 .about-content p {
