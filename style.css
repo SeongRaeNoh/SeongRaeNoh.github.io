@@ -347,6 +347,11 @@ img {
   color: #2E7D32;
 }
 
+.pub-venue-badge.cvpr {
+  background: #FFF3E0;
+  color: #E65100;
+}
+
 .pub-venue-badge.aaai {
   background: #E3F2FD;
   color: #1565C0;

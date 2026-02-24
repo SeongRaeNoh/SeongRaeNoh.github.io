@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV — SeongRae Noh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            --text-primary: #111;
+            --text-secondary: #444;
+            --text-tertiary: #666;
+            --accent: #2D3748;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.5;
+            color: var(--text-primary);
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 40px;
+            font-size: 14px;
+            /* Slightly smaller for CV density */
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 32px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+        }
+
+        .header-title {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .header-contact {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        /* Items */
+        .item {
+            margin-bottom: 12px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+
+
+        .item-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            text-align: right;
+            font-feature-settings: "tnum";
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+
+        .item-details {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 2px;
+            font-style: italic;
+        }
+
+        .item-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        .item-desc ul {
+            margin: 4px 0 0 18px;
+            padding: 0;
+        }
+
+        .item-desc li {
+            margin-bottom: 2px;
+        }
+
+        /* Publications */
+        .pub-item {
+            margin-bottom: 12px;
+        }
+
+        .pub-title {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        .pub-authors {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 2px;
+        }
+
+        .pub-authors strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .pub-meta {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            font-style: italic;
+        }
+
+        .equal-note {
+            vertical-align: super;
+            font-size: 0.8em;
+            line-height: 0;
+        }
+
+        /* Print Override */
+        /* Print Override */
+        @media print {
+            @page {
+                margin: 0;
+                size: auto;
+            }
+
+            body {
+                margin: 1.6cm;
+                padding: 0;
+                max-width: none;
+                font-size: 11pt;
+            }
+
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>SeongRae Noh</h1>
+        <div class="header-title">Integrated MS-Ph.D. Student in Computer Science, Korea University</div>
+        <div class="header-contact">
+            <a href="mailto:rhosunr99@korea.ac.kr">rhosunr99@korea.ac.kr</a>
+            <span>•</span>
+            <a href="https://seongraenoh.github.io">seongraenoh.github.io</a>
+            <span>•</span>
+            <a href="https://github.com/SeongRaeNoh">github.com/SeongRaeNoh</a>
+            <!-- Phone number if provided? User provided email only -->
+        </div>
+    </header>
+
+    <section>
+        <h2>Education</h2>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Korea University</span>
+                <span class="item-date">Mar. 2024 – Present</span>
+            </div>
+            <div class="item-details">Integrated MS-Ph.D. in Computer Science</div>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Kyung Hee University</span>
+                <span class="item-date">Mar. 2020 – Feb. 2024</span>
+            </div>
+            <div class="item-details">B.S. in Computer Science (Software Convergence)</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Publications</h2>
+
+        <!-- ICLR 2026 -->
+        <div class="pub-item">
+            <div class="pub-title">From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning
+                for Embodied Agents</div>
+            <div class="pub-authors">SeungWon Seo<span class="equal-note">*</span>, SooBin Lim<span
+                    class="equal-note">*</span>, <strong>SeongRae Noh<span class="equal-note">*</span></strong>, Haneul
+                Kim, HyeongYeop Kang</div>
+            <div class="pub-meta">ICLR 2026</div>
+        </div>
+
+        <!-- CVPR 2026 -->
+        <div class="pub-item">
+            <div class="pub-title">Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing
+            </div>
+            <div class="pub-authors"><strong>SeongRae Noh</strong>, SeungWon Seo, Gyeong-Moon Park, HyeongYeop Kang
+            </div>
+            <div class="pub-meta">CVPR 2026</div>
+        </div>
+
+        <!-- AAAI 2025 -->
+        <div class="pub-item">
+            <div class="pub-title">REVECA: Adaptive Planning and Trajectory-Based Validation in Cooperative Language
+                Agents Using Information Relevance and Relative Proximity</div>
+            <div class="pub-authors">SeungWon Seo<span class="equal-note">*</span>, <strong>SeongRae Noh<span
+                        class="equal-note">*</span></strong>, Junhyeok Lee, SooBin Lim, Won Hee Lee, HyeongYeop Kang
+            </div>
+            <div class="pub-meta">AAAI 2025 (Oral Presentation)</div>
+        </div>
+
+        <!-- JKCGS 2022 -->
+        <div class="pub-item">
+            <div class="pub-title">Data-Driven Camera Manipulation about Vertical Locomotion in a Virtual Environment
+            </div>
+            <div class="pub-authors">Seung-Won Seo, <strong>Seong-Rae Noh</strong>, Ro-Un Lee, Seung-Jun Park,
+                Hyeong-Yeop Kang</div>
+            <div class="pub-meta">Journal of the Korea Computer Graphics Society (JKCGS), 2022</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Experience</h2>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Student Volunteer, AAAI 2025</span>
+                <span class="item-date">Feb. 2025 – Mar. 2025</span>
+            </div>
+            <div class="item-desc">Assisted in organizing conference sessions and guiding participants (Philadelphia,
+                USA)</div>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Undergraduate Researcher, IIIXR Lab</span>
+                <span class="item-date">Dec. 2021 – Feb. 2024</span>
+            </div>
+            <div class="item-desc">Conducted research on user interactions in VR environments (Yongin, Korea)</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Honors & Awards</h2>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">AAAI Student Scholarship</span>
+                <span class="item-date">2025</span>
+            </div>
+            <div class="item-details">AAAI (Paper: REVECA - Cooperative Language Agents)</div>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Teaching Assistance Scholarship</span>
+                <span class="item-date">2024</span>
+            </div>
+            <div class="item-details">Kyung Hee University (Computer Graphics, Game Engine Basics)</div>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Pearl Abyss Fellowship</span>
+                <span class="item-date">2023</span>
+            </div>
+            <div class="item-details">Project: Urban Building Block Generation</div>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Pearl Abyss Fellowship</span>
+                <span class="item-date">2021</span>
+            </div>
+            <div class="item-details">Project: Procedural Village Generation</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Academic Service</h2>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Reviewer</span>
+                <span class="item-date">2025</span>
+            </div>
+            <div class="item-details">Scientific Reports</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Research Interests</h2>
+        <div class="item">
+            LLM-based Agents, Multi-Agent Systems
+        </div>
+    </section>
+
+</body>
+
+</html>
