@@ -47,22 +47,24 @@
           <h1 class="title is-1 publication-title">Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="../">SeongRae Noh</a><sup>1</sup>,
+              <a href="../">SeongRae Noh</a>,
             </span>
             <span class="author-block">
-              SeungWon Seo<sup>1</sup>,
+              SeungWon Seo,
             </span>
             <span class="author-block">
-              Gyeong-Moon Park<sup>2</sup>,
+              Gyeong-Moon Park<sup>&dagger;</sup>,
             </span>
             <span class="author-block">
-              HyeongYeop Kang<sup>1</sup>
+              HyeongYeop Kang<sup>&dagger;</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Seoul National University (TBD),</span>
-            <span class="author-block"><sup>2</sup>Other Institution (TBD)</span>
+            <span class="author-block">Korea University</span>
+          </div>
+          <div class="is-size-6 publication-authors" style="margin-top: 5px;">
+            <span class="author-block"><sup>&dagger;</sup>Corresponding Authors</span>
           </div>
           <div class="is-size-5 venue">
             <b>CVPR 2026</b>
@@ -110,6 +112,16 @@
                   <span>Code (Soon)</span>
                   </a>
               </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://drive.google.com/file/d/1frv046LtXh1e2EtuY7rLg5zCdJl6Y75o/view?usp=sharing"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fas fa-database"></i>
+                  </span>
+                  <span>Dataset</span>
+                  </a>
+              </span>
             </div>
 
           </div>
@@ -122,7 +134,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body column is-centered has-text-centered">
-      <img src="assets/teaser-placeholder.svg" style="width: 100%; border-radius: 8px; border: 1px solid #ddd;" alt="Teaser Layout">
+      <img src="assets/teaser-1.png" style="width: 100%; border-radius: 8px; border: 1px solid #ddd;" alt="Teaser Layout">
       <h2 class="subtitle has-text-centered" style="margin-top: 15px;">
         A representative teaser image or video demonstrating the goal-regressive planning approach for open-vocabulary 3D indoor scene editing will be placed here.
       </h2>
@@ -138,26 +150,23 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            The abstract has not been added to this repository yet. It will be published here once the paper text is publicly shareable.
+            Editing a 3D indoor scene from natural language is conceptually straightforward but technically challenging. Existing open-vocabulary systems often regenerate large portions of a scene or rely on image-space edits that disrupt spatial structure, resulting in unintended global changes or physically inconsistent layouts. These limitations stem from treating editing primarily as a generative task.
           </p>
           <p>
-            This section is reserved for explaining the core motivation: bridging open-vocabulary instructions to actionable 3D scene editing outcomes via goal-regressive planning.
+            We take a different view. A user instruction defines a desired world state, and editing should be the minimal sequence of actions that makes this state true while preserving everything else. This perspective motivates Edit-As-Act, a framework that performs open-vocabulary scene editing as goal-regressive planning in 3D space.
+          </p>
+          <p>
+            Given a source scene and free-form instruction, Edit-As-Act predicts symbolic goal predicates and plans in EditLang, a PDDL-inspired action language that we design with explicit preconditions and effects encoding support, contact, collision, and other geometric relations. A language-driven planner proposes actions, and a validator enforces goal-directedness, monotonicity, and physical feasibility, producing interpretable and physically coherent transformations.
+          </p>
+          <p>
+            By separating reasoning from low-level generation, Edit-As-Act achieves instruction fidelity, semantic consistency, and physical plausibility—three criteria that existing paradigms cannot satisfy together. On E2A-Bench, our benchmark of 63 editing tasks across 9 indoor environments, Edit-As-Act significantly outperforms prior approaches across all edit types and scene categories.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video Placeholder</h2>
-        <div class="publication-video" style="position: relative; padding-bottom: 56.25%; padding-top: 25px; height: 0; border: 1px solid #ddd; background: #f5f5f5; border-radius: 8px;">
-           <p style="position: absolute; top: 50%; left: 0; right: 0; transform: translateY(-50%); color: #888;">Demo Video Coming Soon</p>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
+    <!-- Paper video removed -->
   </div>
 </section>
 
@@ -173,7 +182,7 @@
           </p>
         </div>
         <div class="has-text-centered" style="margin-top: 30px;">
-          <img src="assets/result-placeholder.svg" style="max-width: 80%; border-radius: 8px; border: 1px solid #ddd;" alt="Planning visualization placeholder">
+          <img src="assets/main-1.png" style="max-width: 80%; border-radius: 8px; border: 1px solid #ddd;" alt="Method Overview">
         </div>
       </div>
     </div>
@@ -184,10 +193,10 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+        <h2 class="title is-3 has-text-centered">Experiment Results</h2>
         <div class="content has-text-justified">
           <p>
-            This showcase highlights before-and-after scene editing results driven by open-vocabulary commands.
+            Quantitative performance and user study results highlighting the effectiveness of Edit-As-Act compared to existing paradigms.
           </p>
         </div>
         
@@ -196,12 +205,12 @@
             <div class="card" style="box-shadow: none; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
               <div class="card-image">
                 <figure class="image">
-                  <img src="assets/result-placeholder.svg" alt="Before/After Placeholder">
+                  <img src="assets/quantitative_result.png" alt="Quantitative Results">
                 </figure>
               </div>
               <div class="card-content" style="padding: 1rem;">
-                <p class="title is-5">Editing Sequence</p>
-                <p class="subtitle is-6">Before-and-after scene editing examples.</p>
+                <p class="title is-5">Quantitative Results</p>
+                <p class="subtitle is-6">Performance on E2A-Bench.</p>
               </div>
             </div>
           </div>
@@ -210,12 +219,12 @@
             <div class="card" style="box-shadow: none; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
               <div class="card-image">
                 <figure class="image">
-                  <img src="assets/result-placeholder.svg" alt="Execution Details">
+                  <img src="assets/user_study_result-1.png" alt="User Study Results">
                 </figure>
               </div>
               <div class="card-content" style="padding: 1rem;">
-                <p class="title is-5">Open-Vocabulary Behavior</p>
-                <p class="subtitle is-6">Handling diverse text prompts.</p>
+                <p class="title is-5">User Study</p>
+                <p class="subtitle is-6">Human evaluation results.</p>
               </div>
             </div>
           </div>
