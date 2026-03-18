@@ -1,0 +1,24 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" rx="40" fill="#F4F7FB"/>
+  <rect x="54" y="54" width="1492" height="892" rx="28" fill="url(#paint0_linear_8_12)" stroke="#C9D5E5" stroke-width="4"/>
+  <rect x="126" y="146" width="420" height="54" rx="27" fill="#FFFFFF" fill-opacity="0.92"/>
+  <rect x="126" y="232" width="664" height="44" rx="22" fill="#DEE8F5"/>
+  <rect x="126" y="300" width="578" height="44" rx="22" fill="#E8EEF7"/>
+  <rect x="126" y="398" width="584" height="330" rx="28" fill="#FFFFFF" fill-opacity="0.84" stroke="#D9E4F2" stroke-width="3"/>
+  <path d="M196 652L310 520L402 610L540 450L640 570" stroke="#476FA6" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1270" cy="336" r="160" fill="#FFFFFF" fill-opacity="0.86" stroke="#D9E4F2" stroke-width="3"/>
+  <path d="M1196 354C1241.33 314.667 1289.33 281.333 1340 254" stroke="#C53D52" stroke-width="20" stroke-linecap="round"/>
+  <path d="M1190 430C1244.67 408 1296 379.333 1344 344" stroke="#476FA6" stroke-width="20" stroke-linecap="round"/>
+  <rect x="926" y="578" width="494" height="98" rx="28" fill="#FFFFFF" fill-opacity="0.9"/>
+  <rect x="960" y="608" width="214" height="18" rx="9" fill="#476FA6"/>
+  <rect x="960" y="642" width="346" height="14" rx="7" fill="#D4DFEE"/>
+  <rect x="126" y="794" width="1294" height="84" rx="24" fill="#FFFFFF" fill-opacity="0.92"/>
+  <text x="126" y="868" fill="#476FA6" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700">Teaser placeholder</text>
+  <text x="459" y="868" fill="#6B7A90" font-family="Inter, Arial, sans-serif" font-size="32">Replace this with the main figure or video thumbnail.</text>
+  <defs>
+    <linearGradient id="paint0_linear_8_12" x1="134" y1="108" x2="1418" y2="898" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E8EFF9"/>
+      <stop offset="1" stop-color="#FDFEFF"/>
+    </linearGradient>
+  </defs>
+</svg>
