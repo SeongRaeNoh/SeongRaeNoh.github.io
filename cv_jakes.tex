@@ -123,24 +123,12 @@
 \end{center}
 
 
-%-----------EDUCATION-----------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Korea University}{Seoul, South Korea}
-      {Integrated MS-Ph.D. in Computer Science (Advisor: Prof. HyeongYeop Kang)}{2024 -- Present}
-    \resumeSubheading
-      {Kyung Hee University}{Yongin, South Korea}
-      {B.S. in Computer Science}{2020 -- 2024}
-  \resumeSubHeadingListEnd
-
-
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Programming}{: Python, C++, C\#} \\
-     \textbf{Frameworks \& Tools}{: PyTorch, HuggingFace, LangChain, OpenAI, OpenRouter, OpenCV, Git, Docker, D3D11, UnrealEngine5, Unity Engine} \\
+     \textbf{Programming}{: Python, C++} \\
+     \textbf{Frameworks \& Tools}{: PyTorch, HuggingFace, LangChain, OpenRouter, OpenCV, Git, WandB, Docker, UnrealEngine5} \\
      \textbf{Language}{: Korean (Native), English (Advanced), Japanese (Intermediate)}
     }}
  \end{itemize}
@@ -151,45 +139,69 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Undergraduate Researcher}{Dec. 2021 -- Feb. 2024}
-      {IIIXR Lab (Advisor: Prof. HyeongYeop Kang)}{Yongin, Korea}
+      {KyungHee University, IIIXR Lab (Advisor: Prof. HyeongYeop Kang)}{Yongin, South Korea}
       \resumeItemListStart
-        \resumeItem{Conducted research on Computer Graphics, Generative Models, and Large Language Models.}
+        \resumeItem{Developed an LLM-based multi-agent system in the VirtualHome environment for embodied task planning and interaction.}
+        \resumeItem{Synthesized urban layouts using generative models and visualized them in Unreal Engine.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 
-%-----------KEY PROJECTS-----------
-\section{Selected Projects}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{PCE} (\emph{ICLR 2026})\textbf{:} Uncertainty-aware scenario tree planning that turns latent LLM assumptions into robust multi-agent decisions without heavy communication. \\
-     \textbf{Edit-As-Act} (\emph{CVPR 2026})\textbf{:} Reframed open-vocabulary 3D scene editing as goal-regressive world-state planning, enabling verifiable, localized, and physically valid edits. \\
-     \textbf{REVECA} (\emph{AAAI 2025 Oral})\textbf{:} Robust LLM cooperation under partial observability via relevance-filtered memory, proximity-aware adaptive planning, and trajectory-based validation.
-    }}
- \end{itemize}
-
-
 %-----------PUBLICATIONS-----------
-\section{Publications}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing} \\
-     \textbf{SeongRae Noh}, SeungWon Seo, Gyeong-Moon Park, HyeongYeop Kang \\
-     \emph{CVPR 2026}
-     }\vspace{2pt}\item{
-     \textbf{From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning for Embodied Agents} \\
-     SeungWon Seo*, SooBin Lim*, \textbf{SeongRae Noh*}, Haneul Kim, HyeongYeop Kang \\
-     \emph{ICLR 2026}
-     }\vspace{2pt}\item{
-     \textbf{REVECA: Adaptive Planning and Trajectory-Based Validation in Cooperative Language Agents Using Information Relevance and Relative Proximity} \\
-     SeungWon Seo*, \textbf{SeongRae Noh*}, Junhyeok Lee, SooBin Lim, Won Hee Lee, HyeongYeop Kang \\
-     \emph{AAAI 2025 Oral}
-     }\vspace{2pt}\item{
-     \textbf{Data-Driven Camera Manipulation about Vertical Locomotion in a Virtual Environment} \\
-     Seung-Won Seo, \textbf{Seong-Rae Noh}, Ro-Un Lee, Seung-Jun Park, Hyeong-Yeop Kang \\
-     \emph{JKCGS 2022}
-    }}
- \end{itemize}
+\section{Selected Publications}
+  \resumeSubHeadingListStart
+    \item
+      \textbf{(CVPR 2026) Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing} \\
+      \small\textbf{SeongRae Noh}, SeungWon Seo, Gyeong-Moon Park, HyeongYeop Kang
+      \resumeItemListStart
+        \resumeItem{Improved instruction fidelity by 20\% and semantic consistency by 43.1\% over prior methods; introduced the E2A Benchmark.}
+        \resumeItem{Reframed open-vocabulary 3D scene editing as goal-regressive world-state planning for verifiable and physically consistent edits.}
+      \resumeItemListEnd
+    \vspace{2pt}
+    \item
+      \textbf{(ICLR 2026) From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning for Embodied Agents} \\
+      \small SeungWon Seo*, SooBin Lim*, \textbf{SeongRae Noh*}, Haneul Kim, HyeongYeop Kang
+      \resumeItemListStart
+        \resumeItem{Reduced inter-agent communication by 71.1\% while improving task performance by 8.6\%.}
+        \resumeItem{Proposed uncertainty-aware scenario tree planning to convert latent LLM assumptions into robust multi-agent decisions.}
+      \resumeItemListEnd
+    \vspace{2pt}
+    \item
+      \textbf{(AAAI 2025 Oral) REVECA: Adaptive Planning and Trajectory-Based Validation in Cooperative Language Agents Using Information Relevance and Relative Proximity} \\
+      \small SeungWon Seo*, \textbf{SeongRae Noh*}, Junhyeok Lee, SooBin Lim, Won Hee Lee, HyeongYeop Kang
+      \resumeItemListStart
+        \resumeItem{Achieved 47\% performance improvement in noisy environments and increased user preference by 73\%.}
+        \resumeItem{Enabled robust cooperation via relevance-filtered memory, proximity-aware planning, and trajectory-based validation.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Selected Projects}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{Development of a Multimodal Information-Driven Service Agent Framework} (LG Electronics)}{2025 -- 2026}
+      \resumeItemListStart
+        \resumeItem{Developed a multimodal HVAC service agent framework that integrates LLM reasoning with visual and structured data to support context-aware engineer assistance.}
+      \resumeItemListEnd
+    \resumeProjectHeading
+      {\textbf{Understanding Multimodal PDF Documents Using LLMs} (LG Electronics)}{2025}
+      \resumeItemListStart
+        \resumeItem{Built an LVLM-based system for understanding multimodal HVAC PDF documents, enabling structured extraction and cross-modal reasoning over text, tables, and figures.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {KyungHee University}{Yongin, South Korea}
+      {Integrated MS-Ph.D. in Computer Science, IIIXR LAB (Advisor: Prof. HyeongYeop Kang)}{2024 -- Present}
+    \resumeSubheading
+      {KyungHee University}{Yongin, South Korea}
+      {B.S. in Computer Science}{2020 -- 2024}
+  \resumeSubHeadingListEnd
 
 
 %-----------HONORS \& AWARDS-----------
@@ -199,6 +211,7 @@
      \textbf{2025} -- AAAI Student Scholarship, AAAI \\
      \textbf{2024} -- Teaching Assistance Scholarship, Kyung Hee Univ. (Computer Graphics, Game Engine Basics) \\
      \textbf{2023} -- Pearl Abyss Fellowship (Project: Urban Building Block Generation) \\
+     \textbf{2022} -- 2nd place on KHU Software Convergence Inter-Club Competition for COVID-19 Recovery Initiatives \\
      \textbf{2021} -- Pearl Abyss Fellowship (Project: Procedural Village Generation)
     }}
  \end{itemize}
@@ -208,7 +221,7 @@
 \section{Academic Service}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Reviewer}{: ICML (2026), Scientific Reports (2025)} \\
+     \textbf{Reviewer}{: ICML (2026), ACM MM (2025), Scientific Reports (2025)} \\
      \textbf{Student Volunteer}{: AAAI (2025)}
     }}
  \end{itemize}
