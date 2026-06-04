@@ -136,6 +136,25 @@
             margin-bottom: 2px;
         }
 
+        .summary {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .skill-label {
+            display: inline-block;
+            width: 175px;
+            font-weight: 700;
+            font-size: 13px;
+            vertical-align: top;
+        }
+
+        .skill-text {
+            display: inline;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
         /* Publications */
         .pub-item {
             margin-bottom: 12px;
@@ -199,17 +218,153 @@
         <h1>SeongRae Noh</h1>
         <div class="header-title">Integrated MS-Ph.D. Student in Computer Science, Korea University</div>
         <div class="header-title" style="margin-top: -6px; margin-bottom: 12px; font-weight: 500; color: var(--text-primary);">
-            Embodied Agents • Human-AI Collaboration
+            LLM Agents &bull; Multi-Agent Planning &bull; Embodied AI &bull; Multimodal Agent Systems
         </div>
         <div class="header-contact">
             <a href="mailto:rhosunr99@korea.ac.kr">rhosunr99@korea.ac.kr</a>
-            <span>•</span>
+            <span>&bull;</span>
             <a href="https://seongraenoh.github.io">seongraenoh.github.io</a>
-            <span>•</span>
+            <span>&bull;</span>
+            <a href="https://www.linkedin.com/in/seongrae-noh-220b462b7/">linkedin.com/in/seongrae-noh</a>
+            <span>&bull;</span>
             <a href="https://github.com/SeongRaeNoh">github.com/SeongRaeNoh</a>
-            <!-- Phone number if provided? User provided email only -->
         </div>
     </header>
+
+    <section>
+        <h2>Research Summary</h2>
+        <p class="summary">Integrated MS-Ph.D. student specializing in LLM agents, multi-agent planning, embodied AI, and multimodal agent systems. Research focuses on agentic reasoning, uncertainty-aware planning, trajectory-based validation, and reliable decision-making in interactive 3D environments, with AAAI Oral/CVPR/ICLR work on 3D scene editing and cooperative language agents.</p>
+    </section>
+
+    <section>
+        <h2>Technical Skills</h2>
+        <div class="item">
+            <span class="skill-label">Agentic AI &amp; LLMs:</span>
+            <span class="skill-text">LLM Agents, Multi-Agent Systems, Agentic Planning, Tool-use Agents, LangChain, HuggingFace Transformers, OpenRouter, Prompt Engineering, LLM Evaluation</span>
+        </div>
+        <div class="item">
+            <span class="skill-label">Machine Learning:</span>
+            <span class="skill-text">PyTorch, Deep Learning, Generative Models, Multimodal Learning, Vision-Language Models</span>
+        </div>
+        <div class="item">
+            <span class="skill-label">Embodied AI &amp; Simulation:</span>
+            <span class="skill-text">VirtualHome, 3D Scene Editing, Embodied Task Planning, Unreal Engine 5, OpenCV</span>
+        </div>
+        <div class="item">
+            <span class="skill-label">Systems &amp; Tools:</span>
+            <span class="skill-text">Python, C++, Docker, Git, Weights &amp; Biases</span>
+        </div>
+        <div class="item">
+            <span class="skill-label">Languages:</span>
+            <span class="skill-text">Korean (Native), English (Advanced), Japanese (Intermediate)</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>Research Experience</h2>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Graduate Researcher, IIIXR Lab, Korea University</span>
+                <span class="item-date">Mar. 2024 &ndash; Present</span>
+            </div>
+            <div class="item-details">Advisor: Prof. HyeongYeop Kang | Seoul, South Korea</div>
+            <div class="item-desc">
+                <ul>
+                    <li>Conducting research on LLM agents, embodied AI, multimodal planning, and agent evaluation in interactive 3D environments.</li>
+                    <li>Developed agentic planning methods for open-vocabulary 3D scene editing and uncertainty-aware multi-agent decision-making.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Undergraduate Researcher, IIIXR Lab, Kyung Hee University</span>
+                <span class="item-date">Dec. 2021 &ndash; Feb. 2024</span>
+            </div>
+            <div class="item-details">Advisor: Prof. HyeongYeop Kang | Yongin, South Korea</div>
+            <div class="item-desc">
+                <ul>
+                    <li>Designed and implemented an embodied LLM agent framework in VirtualHome, enabling multi-agent task planning, communication, and action validation for long-horizon household tasks.</li>
+                    <li>Developed generative 3D environment pipelines for agent simulation, creating urban layouts and Unreal Engine scenes for interactive embodied AI experiments.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Selected Agentic AI Projects</h2>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Development of a Multimodal Information-Driven Service Agent Framework</span>
+                <span class="item-date">Oct. 2025 &ndash; Sep. 2026</span>
+            </div>
+            <div class="item-details">LG Electronics</div>
+            <div class="item-desc">
+                <ul>
+                    <li>Designed a multimodal agent architecture for HVAC service workflows, combining LLM reasoning, visual understanding, and structured device data for context-aware diagnosis and action recommendation.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Understanding Multimodal PDF Documents Using LLMs</span>
+                <span class="item-date">Jun. 2025 &ndash; Sep. 2025</span>
+            </div>
+            <div class="item-details">LG Electronics</div>
+            <div class="item-desc">
+                <ul>
+                    <li>Built an LVLM-based document intelligence system for multimodal technical PDFs, enabling structured extraction, table/figure understanding, and cross-modal reasoning over service manuals.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Selected Publications</h2>
+
+        <div class="pub-item">
+            <div class="pub-title">Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing</div>
+            <div class="pub-authors"><strong>SeongRae Noh</strong>, SeungWon Seo, Gyeong-Moon Park, HyeongYeop Kang</div>
+            <div class="pub-meta">CVPR 2026</div>
+            <div class="item-desc">
+                <ul>
+                    <li>Formulated open-vocabulary 3D scene editing as an agentic goal-regressive planning problem over world states, enabling verifiable, physically consistent action sequences.</li>
+                    <li>Introduced the E2A Benchmark to evaluate LLM/VLM agents on instruction following, action planning, and semantic consistency, improving instruction fidelity by 20% and semantic consistency by 43.1%.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-title">From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning for Embodied Agents</div>
+            <div class="pub-authors">SeungWon Seo<span class="equal-note">*</span>, SooBin Lim<span class="equal-note">*</span>, <strong>SeongRae Noh<span class="equal-note">*</span></strong>, Haneul Kim, HyeongYeop Kang</div>
+            <div class="pub-meta">ICLR 2026</div>
+            <div class="item-desc">
+                <ul>
+                    <li>Proposed uncertainty-aware scenario tree planning for LLM agents under partial observability, converting latent assumptions into robust multi-agent decisions while reducing communication by 71.1% and improving task performance by 8.6%.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-title">REVECA: Adaptive Planning and Trajectory-Based Validation in Cooperative Language Agents Using Information Relevance and Relative Proximity</div>
+            <div class="pub-authors">SeungWon Seo<span class="equal-note">*</span>, <strong>SeongRae Noh<span class="equal-note">*</span></strong>, Junhyeok Lee, SooBin Lim, Won Hee Lee, HyeongYeop Kang</div>
+            <div class="pub-meta">AAAI 2025 (Oral Presentation)</div>
+            <div class="item-desc">
+                <ul>
+                    <li>Developed a cooperative LLM-agent planning framework with relevance-filtered memory, proximity-aware coordination, and trajectory-based validation, achieving 47% performance improvement in noisy environments and increasing user preference by 73%.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-title">Data-Driven Camera Manipulation about Vertical Locomotion in a Virtual Environment</div>
+            <div class="pub-authors">Seung-Won Seo, <strong>Seong-Rae Noh</strong>, Ro-Un Lee, Seung-Jun Park, Hyeong-Yeop Kang</div>
+            <div class="pub-meta">Journal of the Korea Computer Graphics Society (JKCGS), 2022</div>
+        </div>
+    </section>
 
     <section>
         <h2>Education</h2>
@@ -217,147 +372,29 @@
         <div class="item">
             <div class="item-header">
                 <span class="item-title">Korea University</span>
-                <span class="item-date">Mar. 2024 – Feb. 2029</span>
+                <span class="item-date">Mar. 2024 &ndash; Feb. 2029</span>
             </div>
-            <div class="item-details">Integrated MS-Ph.D. in Computer Science</div>
+            <div class="item-details">Integrated MS-Ph.D. in Computer Science, IIIXR Lab (Advisor: Prof. HyeongYeop Kang)</div>
         </div>
 
         <div class="item">
             <div class="item-header">
                 <span class="item-title">Kyung Hee University</span>
-                <span class="item-date">Mar. 2020 – Feb. 2024</span>
+                <span class="item-date">Mar. 2020 &ndash; Feb. 2024</span>
             </div>
-            <div class="item-details">B.S. in Computer Science (Software Convergence)</div>
+            <div class="item-details">B.S. in Computer Science</div>
         </div>
     </section>
 
     <section>
-        <h2>Publications</h2>
-
-        <!-- CVPR 2026 -->
-        <div class="pub-item">
-            <div class="pub-title">Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing
-            </div>
-            <div class="pub-authors"><strong>SeongRae Noh</strong>, SeungWon Seo, Gyeong-Moon Park, HyeongYeop Kang
-            </div>
-            <div class="pub-meta">CVPR 2026</div>
-        </div>
-
-        <!-- ICLR 2026 -->
-        <div class="pub-item">
-            <div class="pub-title">From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning
-                for Embodied Agents</div>
-            <div class="pub-authors">SeungWon Seo<span class="equal-note">*</span>, SooBin Lim<span
-                    class="equal-note">*</span>, <strong>SeongRae Noh<span class="equal-note">*</span></strong>, Haneul
-                Kim, HyeongYeop Kang</div>
-            <div class="pub-meta">ICLR 2026</div>
-        </div>
-
-        <!-- AAAI 2025 -->
-        <div class="pub-item">
-            <div class="pub-title">REVECA: Adaptive Planning and Trajectory-Based Validation in Cooperative Language
-                Agents Using Information Relevance and Relative Proximity</div>
-            <div class="pub-authors">SeungWon Seo<span class="equal-note">*</span>, <strong>SeongRae Noh<span
-                        class="equal-note">*</span></strong>, Junhyeok Lee, SooBin Lim, Won Hee Lee, HyeongYeop Kang
-            </div>
-            <div class="pub-meta">AAAI 2025 (Oral Presentation)</div>
-        </div>
-
-        <!-- JKCGS 2022 -->
-        <div class="pub-item">
-            <div class="pub-title">Data-Driven Camera Manipulation about Vertical Locomotion in a Virtual Environment
-            </div>
-            <div class="pub-authors">Seung-Won Seo, <strong>Seong-Rae Noh</strong>, Ro-Un Lee, Seung-Jun Park,
-                Hyeong-Yeop Kang</div>
-            <div class="pub-meta">Journal of the Korea Computer Graphics Society (JKCGS), 2022</div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Experience</h2>
-
+        <h2>Honors & Service</h2>
         <div class="item">
-            <div class="item-header">
-                <span class="item-title">Undergraduate Researcher, IIIXR Lab</span>
-                <span class="item-date">Dec. 2021 – Feb. 2024</span>
-            </div>
-            <div class="item-desc">Conducted research on Computer Graphics, Generative Models, and Large Language Models (Yongin, Korea)</div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Honors & Awards</h2>
-        <div class="item">
-            <div class="item-header">
-                <span class="item-title">AAAI Student Scholarship</span>
-                <span class="item-date">2025</span>
-            </div>
-            <div class="item-details">AAAI (Paper: REVECA - Cooperative Language Agents)</div>
-        </div>
-
-        <div class="item">
-            <div class="item-header">
-                <span class="item-title">Teaching Assistance Scholarship</span>
-                <span class="item-date">2024</span>
-            </div>
-            <div class="item-details">Kyung Hee University (Computer Graphics, Game Engine Basics)</div>
-        </div>
-
-        <div class="item">
-            <div class="item-header">
-                <span class="item-title">Pearl Abyss Fellowship</span>
-                <span class="item-date">2023</span>
-            </div>
-            <div class="item-details">Project: Urban Building Block Generation</div>
-        </div>
-
-        <div class="item">
-            <div class="item-header">
-                <span class="item-title">Pearl Abyss Fellowship</span>
-                <span class="item-date">2021</span>
-            </div>
-            <div class="item-details">Project: Procedural Village Generation</div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Academic Service</h2>
-        <div class="item">
-            <div class="item-header">
-                <span class="item-title">Reviewer</span>
-                <span class="item-date">2026</span>
-            </div>
-            <div class="item-details">ICML</div>
+            <span class="skill-label">Awards:</span>
+            <span class="skill-text">AAAI Student Scholarship (2025); Teaching Assistance Scholarship (2024); Pearl Abyss Fellowship (2023, 2021); 2nd place, KHU Software Convergence Inter-Club Competition (2022)</span>
         </div>
         <div class="item">
-            <div class="item-header">
-                <span class="item-title">Reviewer</span>
-                <span class="item-date">2025</span>
-            </div>
-            <div class="item-details">Scientific Reports</div>
-        </div>
-        <div class="item">
-            <div class="item-header">
-                <span class="item-title">Student Volunteer</span>
-                <span class="item-date">2025</span>
-            </div>
-            <div class="item-details">AAAI</div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Skills</h2>
-        <div class="item">
-            <span class="item-title" style="display:inline-block; width:110px;">Programming:</span> 
-            <span class="item-desc" style="display:inline;">Python (PyTorch, HuggingFace, LangChain, OpenAI, OpenRouter), C++ (D3D11, UnrealEngine5), C# (Unity)</span>
-        </div>
-        <div class="item">
-            <span class="item-title" style="display:inline-block; width:110px;">Training:</span> 
-            <span class="item-desc" style="display:inline;">PyTorch, DeepSpeed, WandB</span>
-        </div>
-        <div class="item">
-            <span class="item-title" style="display:inline-block; width:110px;">Language:</span> 
-            <span class="item-desc" style="display:inline;">Korean (Native), English (Advanced), Japanese (Intermediate)</span>
+            <span class="skill-label">Service:</span>
+            <span class="skill-text">Reviewer - ICML (2026), ACM MM (2025), Scientific Reports (2025); Student Volunteer - AAAI (2025)</span>
         </div>
     </section>
 

@@ -19,11 +19,10 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \usepackage{amssymb}
-\usepackage{fontawesome5}
-\usepackage{pifont}
+\usepackage{iftex}
+\ifPDFTeX
 \input{glyphtounicode}
-
-\newcommand{\githubstars}[1]{[{\faGithubSquare}\,\ding{72}\,\textbf{#1}]}
+\fi
 
 
 %----------FONT OPTIONS----------
@@ -41,19 +40,20 @@
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot{}
+\setlength{\footskip}{4pt}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.55in}
-\addtolength{\evensidemargin}{-0.55in}
-\addtolength{\textwidth}{1.1in}
-\addtolength{\topmargin}{-.65in}
-\addtolength{\textheight}{1.3in}
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-.75in}
+\addtolength{\textheight}{1.55in}
 
 \urlstyle{same}
 
-\linespread{1.1}
+\linespread{1.0}
 
 \raggedbottom
 \raggedright
@@ -65,7 +65,9 @@
 }{}{0em}{}[\color{black}\titlerule \vspace{-8pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
+\ifPDFTeX
 \pdfgentounicode=1
+\fi
 
 %-------------------------
 % Custom commands
@@ -123,26 +125,60 @@
 \end{center}
 
 
+%-----------RESEARCH SUMMARY-----------
+\section{Research Summary}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     Integrated MS-Ph.D. student specializing in LLM agents, multi-agent planning, embodied AI, and multimodal agent systems. Research focuses on agentic reasoning, uncertainty-aware planning, trajectory-based validation, and reliable decision-making in interactive 3D environments, with AAAI Oral/CVPR/ICLR work on 3D scene editing and cooperative language agents.
+    }}
+ \end{itemize}
+
+
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Programming}{: Python, C++} \\
-     \textbf{Frameworks \& Tools}{: PyTorch, HuggingFace, LangChain, OpenRouter, OpenCV, Git, WandB, Docker, UnrealEngine5} \\
-     \textbf{Language}{: Korean (Native), English (Advanced), Japanese (Intermediate)}
+     \textbf{Agentic AI \& LLMs}{: LLM Agents, Multi-Agent Systems, Agentic Planning, Tool-use Agents, LangChain, HuggingFace Transformers, OpenRouter, Prompt Engineering, LLM Evaluation} \\
+     \textbf{Machine Learning}{: PyTorch, Deep Learning, Generative Models, Multimodal Learning, Vision-Language Models} \\
+     \textbf{Embodied AI \& Simulation}{: VirtualHome, 3D Scene Editing, Embodied Task Planning, Unreal Engine 5, OpenCV} \\
+     \textbf{Systems \& Tools}{: Python, C++, Docker, Git, Weights \& Biases} \\
+     \textbf{Languages}{: Korean (Native), English (Advanced), Japanese (Intermediate)}
     }}
  \end{itemize}
 
 
 %-----------EXPERIENCE-----------
-\section{Experience}
+\section{Research Experience}
   \resumeSubHeadingListStart
+    \resumeSubheading
+      {Graduate Researcher}{Mar. 2024 -- Present}
+      {Korea University, IIIXR Lab (Advisor: Prof. HyeongYeop Kang)}{Seoul, South Korea}
+      \resumeItemListStart
+        \resumeItem{Conducting research on LLM agents, embodied AI, multimodal planning, and agent evaluation in interactive 3D environments.}
+        \resumeItem{Developed agentic planning methods for open-vocabulary 3D scene editing and uncertainty-aware multi-agent decision-making.}
+      \resumeItemListEnd
     \resumeSubheading
       {Undergraduate Researcher}{Dec. 2021 -- Feb. 2024}
       {KyungHee University, IIIXR Lab (Advisor: Prof. HyeongYeop Kang)}{Yongin, South Korea}
       \resumeItemListStart
-        \resumeItem{Developed an LLM-based multi-agent system in the VirtualHome environment for embodied task planning and interaction.}
-        \resumeItem{Synthesized urban layouts using generative models and visualized them in Unreal Engine.}
+        \resumeItem{Designed and implemented an embodied LLM agent framework in VirtualHome, enabling multi-agent task planning, communication, and action validation for long-horizon household tasks.}
+        \resumeItem{Developed generative 3D environment pipelines for agent simulation, creating urban layouts and Unreal Engine scenes for interactive embodied AI experiments.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Selected Agentic AI Projects}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{Development of a Multimodal Information-Driven Service Agent Framework} (LG Electronics)}{Oct. 2025 -- Sep. 2026}
+      \resumeItemListStart
+        \resumeItem{Designed a multimodal agent architecture for HVAC service workflows, combining LLM reasoning, visual understanding, and structured device data for context-aware diagnosis and action recommendation.}
+      \resumeItemListEnd
+    \resumeProjectHeading
+      {\textbf{Understanding Multimodal PDF Documents Using LLMs} (LG Electronics)}{Jun. 2025 -- Sep. 2025}
+      \resumeItemListStart
+        \resumeItem{Built an LVLM-based document intelligence system for multimodal technical PDFs, enabling structured extraction, table/figure understanding, and cross-modal reasoning over service manuals.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -154,40 +190,22 @@
       \textbf{(CVPR 2026) Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing} \\
       \small\textbf{SeongRae Noh}, SeungWon Seo, Gyeong-Moon Park, HyeongYeop Kang
       \resumeItemListStart
-        \resumeItem{Improved instruction fidelity by 20\% and semantic consistency by 43.1\% over prior methods; introduced the E2A Benchmark.}
-        \resumeItem{Reframed open-vocabulary 3D scene editing as goal-regressive world-state planning for verifiable and physically consistent edits.}
+        \resumeItem{Formulated open-vocabulary 3D scene editing as an agentic goal-regressive planning problem over world states, enabling verifiable, physically consistent action sequences.}
+        \resumeItem{Introduced the E2A Benchmark to evaluate LLM/VLM agents on instruction following, action planning, and semantic consistency, improving instruction fidelity by 20\% and semantic consistency by 43.1\%.}
       \resumeItemListEnd
     \vspace{2pt}
     \item
       \textbf{(ICLR 2026) From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning for Embodied Agents} \\
       \small SeungWon Seo*, SooBin Lim*, \textbf{SeongRae Noh*}, Haneul Kim, HyeongYeop Kang
       \resumeItemListStart
-        \resumeItem{Reduced inter-agent communication by 71.1\% while improving task performance by 8.6\%.}
-        \resumeItem{Proposed uncertainty-aware scenario tree planning to convert latent LLM assumptions into robust multi-agent decisions.}
+        \resumeItem{Proposed uncertainty-aware scenario tree planning for LLM agents under partial observability, converting latent assumptions into robust multi-agent decisions while reducing communication by 71.1\% and improving task performance by 8.6\%.}
       \resumeItemListEnd
     \vspace{2pt}
     \item
       \textbf{(AAAI 2025 Oral) REVECA: Adaptive Planning and Trajectory-Based Validation in Cooperative Language Agents Using Information Relevance and Relative Proximity} \\
       \small SeungWon Seo*, \textbf{SeongRae Noh*}, Junhyeok Lee, SooBin Lim, Won Hee Lee, HyeongYeop Kang
       \resumeItemListStart
-        \resumeItem{Achieved 47\% performance improvement in noisy environments and increased user preference by 73\%.}
-        \resumeItem{Enabled robust cooperation via relevance-filtered memory, proximity-aware planning, and trajectory-based validation.}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
-
-
-%-----------PROJECTS-----------
-\section{Selected Projects}
-  \resumeSubHeadingListStart
-    \resumeProjectHeading
-      {\textbf{Development of a Multimodal Information-Driven Service Agent Framework} (LG Electronics)}{Oct. 2025 -- Sep. 2026}
-      \resumeItemListStart
-        \resumeItem{Developed a multimodal HVAC service agent framework that integrates LLM reasoning with visual and structured data to support context-aware engineer assistance.}
-      \resumeItemListEnd
-    \resumeProjectHeading
-      {\textbf{Understanding Multimodal PDF Documents Using LLMs} (LG Electronics)}{Jun. 2025 -- Sep. 2025}
-      \resumeItemListStart
-        \resumeItem{Built an LVLM-based system for understanding multimodal HVAC PDF documents, enabling structured extraction and cross-modal reasoning over text, tables, and figures.}
+        \resumeItem{Developed a cooperative LLM-agent planning framework with relevance-filtered memory, proximity-aware coordination, and trajectory-based validation, achieving 47\% performance improvement in noisy environments and increasing user preference by 73\%.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -204,25 +222,12 @@
   \resumeSubHeadingListEnd
 
 
-%-----------HONORS \& AWARDS-----------
-\section{Honors \& Awards}
+%-----------HONORS \& SERVICE-----------
+\section{Honors \& Service}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{2025} -- AAAI Student Scholarship, AAAI \\
-     \textbf{2024} -- Teaching Assistance Scholarship, Kyung Hee Univ. (Computer Graphics, Game Engine Basics) \\
-     \textbf{2023} -- Pearl Abyss Fellowship (Project: Urban Building Block Generation) \\
-     \textbf{2022} -- 2nd place on KHU Software Convergence Inter-Club Competition for COVID-19 Recovery Initiatives \\
-     \textbf{2021} -- Pearl Abyss Fellowship (Project: Procedural Village Generation)
-    }}
- \end{itemize}
-
-
-%-----------ACADEMIC SERVICE-----------
-\section{Academic Service}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Reviewer}{: ICML (2026), ACM MM (2025), Scientific Reports (2025)} \\
-     \textbf{Student Volunteer}{: AAAI (2025)}
+     \textbf{Awards}{: AAAI Student Scholarship (2025); Teaching Assistance Scholarship (2024); Pearl Abyss Fellowship (2023, 2021); 2nd place, KHU Software Convergence Inter-Club Competition (2022)} \\
+     \textbf{Service}{: Reviewer -- ICML (2026), ACM MM (2025), Scientific Reports (2025); Student Volunteer -- AAAI (2025)}
     }}
  \end{itemize}
 
