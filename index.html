@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SeongRae Noh — Researcher</title>
   <meta name="description"
-    content="Personal academic homepage of SeongRae Noh, M.S. student at Korea University researching LLM-based agents and multi-agent systems.">
+    content="Personal academic homepage of SeongRae Noh, integrated M.S.-Ph.D. student at Korea University researching LLM agents, 3D scenes, and decision-making in interactive environments.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -23,6 +23,7 @@
       <a href="#hero" class="nav-logo">SeongRae Noh</a>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#news">News</a>
         <a href="#publications">Publications</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
@@ -47,7 +48,7 @@
           </svg>
           Korea University
         </p>
-        <p class="hero-research">LLM Agents · Multi-Agent Planning · Embodied AI</p>
+        <p class="hero-research">LLM Agents · 3D Scenes · Decision-Making</p>
         <div class="hero-links">
           <!-- Email -->
           <a href="mailto:rhosunr99@korea.ac.kr" class="social-link" title="Email" aria-label="Email">
@@ -82,16 +83,8 @@
             </svg>
           </a>
           <!-- CV -->
-          <a href="CV_SeongRaeNoh.pdf" target="_blank" rel="noopener" class="social-link" title="CV" aria-label="CV">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-              <polyline points="10 9 9 9 8 9"></polyline>
-            </svg>
-          </a>
+          <a href="CV_SeongRaeNoh.pdf" target="_blank" rel="noopener" class="social-link cv-text" title="CV"
+            aria-label="CV">CV</a>
         </div>
       </div>
     </div>
@@ -103,19 +96,73 @@
       <h2 class="section-title">About</h2>
       <div class="about-content fade-in">
         <p>
-          I am an integrated M.S.-Ph.D. student in the Department of Computer Science at Korea University, advised by Prof. HyeongYeop Kang. My research focuses on LLM agents, multi-agent planning, and embodied AI for reliable decision-making in interactive 3D environments.
+          I am a 3rd-year integrated M.S.-Ph.D. student in the Department of Computer Science at Korea University, advised by Prof. HyeongYeop Kang. My research focuses on LLM agents, 3D scenes, and decision-making in interactive environments.
         </p>
       </div>
     </div>
   </section>
 
+  <!-- News Section -->
+  <section class="section section-alt" id="news">
+    <div class="container">
+      <h2 class="section-title">News</h2>
+      <ul class="news-list">
+
+        <!-- Add newest item at the top; keep the 5 most recent. -->
+        <li class="news-item fade-in">
+          <span class="news-date">2026.08</span>
+          <div class="news-content">One paper conditionally accepted to <strong>SIGGRAPH Asia 2026</strong></div>
+        </li>
+
+        <li class="news-item fade-in">
+          <span class="news-date">2026.02</span>
+          <div class="news-content">One paper accepted to <strong>CVPR 2026</strong></div>
+        </li>
+
+        <li class="news-item fade-in">
+          <span class="news-date">2026.02</span>
+          <div class="news-content">Served as a reviewer for <strong>ICML 2026</strong></div>
+        </li>
+
+        <li class="news-item fade-in">
+          <span class="news-date">2026.01</span>
+          <div class="news-content">One paper accepted to <strong>ICLR 2026</strong></div>
+        </li>
+
+        <li class="news-item fade-in">
+          <span class="news-date">2025.04</span>
+          <div class="news-content">Served as a reviewer for <strong>ACM MM 2025</strong></div>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
   <!-- Publications Section -->
-  <section class="section section-alt" id="publications">
+  <section class="section" id="publications">
     <div class="container">
       <h2 class="section-title">Publications</h2>
-      <p class="section-subtitle"><span class="equal-note">*</span> denotes equal contribution</p>
+      <p class="section-subtitle"><span class="equal-note">*</span> denotes equal contribution&nbsp;&nbsp;·&nbsp;&nbsp;<span class="corr-note">&dagger;</span> denotes corresponding author</p>
 
       <div class="pub-list">
+
+        <!-- SIGGRAPH Asia 2026 -->
+        <div class="pub-card fade-in">
+          <div class="pub-venue-badge siggraph">SIGGRAPH Asia 2026 <span class="cond-tag">Conditional Accept</span>
+          </div>
+          <h3 class="pub-title">CuCaT: Cut-Structured Camera Trajectory Generation for Dance Music Videos</h3>
+          <p class="pub-authors">
+            SooBin Lim<span class="equal-note">*</span>,
+            <strong>SeongRae Noh</strong><span class="equal-note">*</span>,
+            Jeongyoun Kwon,
+            YoungBeom Kim,
+            HyeongYeop Kang<span class="corr-note">&dagger;</span>
+          </p>
+          <div class="pub-meta">
+            <span class="pub-year">2026</span>
+            <span class="pub-venue-text">ACM SIGGRAPH Asia</span>
+          </div>
+        </div>
 
         <!-- CVPR 2026 -->
         <div class="pub-card fade-in">
@@ -124,8 +171,8 @@
           <p class="pub-authors">
             <strong>SeongRae Noh</strong>,
             SeungWon Seo,
-            Gyeong-Moon Park,
-            HyeongYeop Kang
+            Gyeong-Moon Park<span class="corr-note">&dagger;</span>,
+            HyeongYeop Kang<span class="corr-note">&dagger;</span>
           </p>
           <div class="pub-meta">
             <span class="pub-year">2026</span>
@@ -160,7 +207,7 @@
             SooBin Lim<span class="equal-note">*</span>,
             <strong>SeongRae Noh</strong><span class="equal-note">*</span>,
             Haneul Kim,
-            HyeongYeop Kang
+            HyeongYeop Kang<span class="corr-note">&dagger;</span>
           </p>
           <div class="pub-meta">
             <span class="pub-year">2026</span>
@@ -194,7 +241,7 @@
             Junhyeok Lee,
             SooBin Lim,
             Won Hee Lee,
-            HyeongYeop Kang
+            HyeongYeop Kang<span class="corr-note">&dagger;</span>
           </p>
           <div class="pub-meta">
             <span class="pub-year">2025</span>
@@ -226,7 +273,7 @@
             <strong>Seong-Rae Noh</strong>,
             Ro-Un Lee,
             Seung-Jun Park,
-            Hyeong-Yeop Kang
+            Hyeong-Yeop Kang<span class="corr-note">&dagger;</span>
           </p>
           <div class="pub-meta">
             <span class="pub-year">2022</span>
@@ -239,20 +286,10 @@
   </section>
 
   <!-- Experience Section -->
-  <section class="section" id="experience">
+  <section class="section section-alt" id="experience">
     <div class="container">
       <h2 class="section-title">Experience</h2>
       <div class="edu-timeline">
-        <div class="edu-item fade-in">
-          <div class="edu-dot"></div>
-          <div class="edu-content">
-            <h3>Student Volunteer</h3>
-            <p class="edu-degree">AAAI 2025</p>
-            <p class="edu-period">Feb. 2025 – Mar. 2025 | Philadelphia, USA</p>
-            <p class="edu-desc" style="color: var(--text-secondary); margin-top: 4px; font-size: 0.95rem;">Assisted in
-              organizing conference sessions and guiding participants</p>
-          </div>
-        </div>
         <div class="edu-item fade-in">
           <div class="edu-dot"></div>
           <div class="edu-content">
@@ -268,7 +305,7 @@
   </section>
 
   <!-- Education Section -->
-  <section class="section section-alt" id="education">
+  <section class="section" id="education">
     <div class="container">
       <h2 class="section-title">Education</h2>
       <div class="edu-timeline">
@@ -293,7 +330,7 @@
   </section>
 
   <!-- Honors & Awards Section -->
-  <section class="section" id="awards">
+  <section class="section section-alt" id="awards">
     <div class="container">
       <h2 class="section-title">Honors & Awards</h2>
       <ul class="award-list">
@@ -330,11 +367,11 @@
   </section>
 
   <!-- Academic Service Section -->
-  <section class="section section-alt" id="service">
+  <section class="section" id="service">
     <div class="container">
       <h2 class="section-title">Academic Service</h2>
       <ul class="service-list">
-        <li class="fade-in"><strong>Reviewer</strong>: Scientific Reports (2025)</li>
+        <li class="fade-in"><strong>Reviewer</strong>: NeurIPS, ICML (2026), ACM MM, Scientific Reports (2025)</li>
       </ul>
     </div>
   </section>

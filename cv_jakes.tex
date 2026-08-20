@@ -129,7 +129,7 @@
 \section{Research Summary}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     Integrated MS-Ph.D. student specializing in LLM agents, multi-agent planning, embodied AI, and multimodal agent systems. Research focuses on agentic reasoning, uncertainty-aware planning, trajectory-based validation, and reliable decision-making in interactive 3D environments, with AAAI Oral/CVPR/ICLR work on 3D scene editing and cooperative language agents.
+     Integrated MS-Ph.D. student building LLM agents that turn open-ended instructions into verifiable action sequences in 3D environments --- spanning scene editing, multi-agent cooperation under partial observability, and camera control.
     }}
  \end{itemize}
 
@@ -138,11 +138,9 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Agentic AI \& LLMs}{: LLM Agents, Multi-Agent Systems, Agentic Planning, Tool-use Agents, LangChain, HuggingFace Transformers, OpenRouter, Prompt Engineering, LLM Evaluation} \\
-     \textbf{Machine Learning}{: PyTorch, Deep Learning, Generative Models, Multimodal Learning, Vision-Language Models} \\
-     \textbf{Embodied AI \& Simulation}{: VirtualHome, 3D Scene Editing, Embodied Task Planning, Unreal Engine 5, OpenCV} \\
-     \textbf{Systems \& Tools}{: Python, C++, Docker, Git, Weights \& Biases} \\
-     \textbf{Languages}{: Korean (Native), English (Advanced), Japanese (Intermediate)}
+     \textbf{Agentic AI \& LLMs}{: LLM Agents, Multi-Agent Systems, Agentic Planning, LLM Evaluation, HuggingFace Transformers} \\
+     \textbf{ML \& Embodied AI}{: PyTorch, Vision-Language Models, Embodied Task Planning, VirtualHome, Unreal Engine 5} \\
+     \textbf{Tools \& Languages}{: Python, C++, Docker, Git; Korean (Native), English (Advanced), Japanese (Intermediate)}
     }}
  \end{itemize}
 
@@ -187,25 +185,31 @@
 \section{Selected Publications}
   \resumeSubHeadingListStart
     \item
-      \textbf{(CVPR 2026) Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing} \\
-      \small\textbf{SeongRae Noh}, SeungWon Seo, Gyeong-Moon Park, HyeongYeop Kang
+      {\small\textbf{(SIGGRAPH Asia 2026, Conditionally Accepted) CuCaT: Cut-Structured Camera Trajectory Generation for Dance Music Videos}} \\
+      {\small SooBin Lim*, \textbf{SeongRae Noh*}, Jeongyoun Kwon, YoungBeom Kim, HyeongYeop Kang\textsuperscript{\dag}}
       \resumeItemListStart
-        \resumeItem{Formulated open-vocabulary 3D scene editing as an agentic goal-regressive planning problem over world states, enabling verifiable, physically consistent action sequences.}
-        \resumeItem{Introduced the E2A Benchmark to evaluate LLM/VLM agents on instruction following, action planning, and semantic consistency, improving instruction fidelity by 20\% and semantic consistency by 43.1\%.}
+        \resumeItem{Proposed a cut-structured camera formulation that separates cut and transition events over a performer-relative shot plan, achieving the best continuity and variation on the DCM benchmark while keeping the dancer visible in nearly every frame.}
       \resumeItemListEnd
     \vspace{2pt}
     \item
-      \textbf{(ICLR 2026) From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning for Embodied Agents} \\
-      \small SeungWon Seo*, SooBin Lim*, \textbf{SeongRae Noh*}, Haneul Kim, HyeongYeop Kang
+      {\small\textbf{(CVPR 2026) Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing}} \\
+      {\small\textbf{SeongRae Noh}, SeungWon Seo, Gyeong-Moon Park\textsuperscript{\dag}, HyeongYeop Kang\textsuperscript{\dag}}
+      \resumeItemListStart
+        \resumeItem{Formulated open-vocabulary 3D scene editing as agentic goal-regressive planning over world states, and introduced the E2A Benchmark, improving instruction fidelity by 20\% and semantic consistency by 43.1\%.}
+      \resumeItemListEnd
+    \vspace{2pt}
+    \item
+      {\small\textbf{(ICLR 2026) From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning for Embodied Agents}} \\
+      {\small SeungWon Seo*, SooBin Lim*, \textbf{SeongRae Noh*}, Haneul Kim, HyeongYeop Kang\textsuperscript{\dag}}
       \resumeItemListStart
         \resumeItem{Proposed uncertainty-aware scenario tree planning for LLM agents under partial observability, converting latent assumptions into robust multi-agent decisions while reducing communication by 71.1\% and improving task performance by 8.6\%.}
       \resumeItemListEnd
     \vspace{2pt}
     \item
-      \textbf{(AAAI 2025 Oral) REVECA: Adaptive Planning and Trajectory-Based Validation in Cooperative Language Agents Using Information Relevance and Relative Proximity} \\
-      \small SeungWon Seo*, \textbf{SeongRae Noh*}, Junhyeok Lee, SooBin Lim, Won Hee Lee, HyeongYeop Kang
+      {\small\textbf{(AAAI 2025 Oral) REVECA: Adaptive Planning and Trajectory-Based Validation in Cooperative Language Agents Using Information Relevance and Relative Proximity}} \\
+      {\small SeungWon Seo*, \textbf{SeongRae Noh*}, Junhyeok Lee, SooBin Lim, Won Hee Lee, HyeongYeop Kang\textsuperscript{\dag}}
       \resumeItemListStart
-        \resumeItem{Developed a cooperative LLM-agent planning framework with relevance-filtered memory, proximity-aware coordination, and trajectory-based validation, achieving 47\% performance improvement in noisy environments and increasing user preference by 73\%.}
+        \resumeItem{Developed a cooperative LLM-agent planning framework with relevance-filtered memory and trajectory-based validation, improving performance by 47\% in noisy environments and user preference by 73\%.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -227,7 +231,7 @@
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      \textbf{Awards}{: AAAI Student Scholarship (2025); Teaching Assistance Scholarship (2024); Pearl Abyss Fellowship (2023, 2021); 2nd place, KHU Software Convergence Inter-Club Competition (2022)} \\
-     \textbf{Service}{: Reviewer -- ICML (2026), ACM MM (2025), Scientific Reports (2025); Student Volunteer -- AAAI (2025)}
+     \textbf{Service}{: Reviewer -- NeurIPS, ICML (2026), ACM MM, Scientific Reports (2025); Student Volunteer -- AAAI (2025)}
     }}
  \end{itemize}
 

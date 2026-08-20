@@ -183,7 +183,8 @@
             font-style: italic;
         }
 
-        .equal-note {
+        .equal-note,
+        .corr-note {
             vertical-align: super;
             font-size: 0.8em;
             line-height: 0;
@@ -233,30 +234,22 @@
 
     <section>
         <h2>Research Summary</h2>
-        <p class="summary">Integrated MS-Ph.D. student specializing in LLM agents, multi-agent planning, embodied AI, and multimodal agent systems. Research focuses on agentic reasoning, uncertainty-aware planning, trajectory-based validation, and reliable decision-making in interactive 3D environments, with AAAI Oral/CVPR/ICLR work on 3D scene editing and cooperative language agents.</p>
+        <p class="summary">Integrated MS-Ph.D. student building LLM agents that turn open-ended instructions into verifiable action sequences in 3D environments — spanning scene editing, multi-agent cooperation under partial observability, and camera control.</p>
     </section>
 
     <section>
         <h2>Technical Skills</h2>
         <div class="item">
             <span class="skill-label">Agentic AI &amp; LLMs:</span>
-            <span class="skill-text">LLM Agents, Multi-Agent Systems, Agentic Planning, Tool-use Agents, LangChain, HuggingFace Transformers, OpenRouter, Prompt Engineering, LLM Evaluation</span>
+            <span class="skill-text">LLM Agents, Multi-Agent Systems, Agentic Planning, LLM Evaluation, HuggingFace Transformers</span>
         </div>
         <div class="item">
-            <span class="skill-label">Machine Learning:</span>
-            <span class="skill-text">PyTorch, Deep Learning, Generative Models, Multimodal Learning, Vision-Language Models</span>
+            <span class="skill-label">ML &amp; Embodied AI:</span>
+            <span class="skill-text">PyTorch, Vision-Language Models, Embodied Task Planning, VirtualHome, Unreal Engine 5</span>
         </div>
         <div class="item">
-            <span class="skill-label">Embodied AI &amp; Simulation:</span>
-            <span class="skill-text">VirtualHome, 3D Scene Editing, Embodied Task Planning, Unreal Engine 5, OpenCV</span>
-        </div>
-        <div class="item">
-            <span class="skill-label">Systems &amp; Tools:</span>
-            <span class="skill-text">Python, C++, Docker, Git, Weights &amp; Biases</span>
-        </div>
-        <div class="item">
-            <span class="skill-label">Languages:</span>
-            <span class="skill-text">Korean (Native), English (Advanced), Japanese (Intermediate)</span>
+            <span class="skill-label">Tools &amp; Languages:</span>
+            <span class="skill-text">Python, C++, Docker, Git; Korean (Native), English (Advanced), Japanese (Intermediate)</span>
         </div>
     </section>
 
@@ -326,20 +319,30 @@
         <h2>Selected Publications</h2>
 
         <div class="pub-item">
+            <div class="pub-title">CuCaT: Cut-Structured Camera Trajectory Generation for Dance Music Videos</div>
+            <div class="pub-authors">SooBin Lim<span class="equal-note">*</span>, <strong>SeongRae Noh<span class="equal-note">*</span></strong>, Jeongyoun Kwon, YoungBeom Kim, HyeongYeop Kang<span class="corr-note">&dagger;</span></div>
+            <div class="pub-meta">ACM SIGGRAPH Asia 2026 (Conditionally Accepted)</div>
+            <div class="item-desc">
+                <ul>
+                    <li>Proposed a cut-structured camera formulation that separates cut and transition events over a performer-relative shot plan, achieving the best continuity and variation on the DCM benchmark while keeping the dancer visible in nearly every frame.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pub-item">
             <div class="pub-title">Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing</div>
-            <div class="pub-authors"><strong>SeongRae Noh</strong>, SeungWon Seo, Gyeong-Moon Park, HyeongYeop Kang</div>
+            <div class="pub-authors"><strong>SeongRae Noh</strong>, SeungWon Seo, Gyeong-Moon Park<span class="corr-note">&dagger;</span>, HyeongYeop Kang<span class="corr-note">&dagger;</span></div>
             <div class="pub-meta">CVPR 2026</div>
             <div class="item-desc">
                 <ul>
-                    <li>Formulated open-vocabulary 3D scene editing as an agentic goal-regressive planning problem over world states, enabling verifiable, physically consistent action sequences.</li>
-                    <li>Introduced the E2A Benchmark to evaluate LLM/VLM agents on instruction following, action planning, and semantic consistency, improving instruction fidelity by 20% and semantic consistency by 43.1%.</li>
+                    <li>Formulated open-vocabulary 3D scene editing as agentic goal-regressive planning over world states, and introduced the E2A Benchmark, improving instruction fidelity by 20% and semantic consistency by 43.1%.</li>
                 </ul>
             </div>
         </div>
 
         <div class="pub-item">
             <div class="pub-title">From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning for Embodied Agents</div>
-            <div class="pub-authors">SeungWon Seo<span class="equal-note">*</span>, SooBin Lim<span class="equal-note">*</span>, <strong>SeongRae Noh<span class="equal-note">*</span></strong>, Haneul Kim, HyeongYeop Kang</div>
+            <div class="pub-authors">SeungWon Seo<span class="equal-note">*</span>, SooBin Lim<span class="equal-note">*</span>, <strong>SeongRae Noh<span class="equal-note">*</span></strong>, Haneul Kim, HyeongYeop Kang<span class="corr-note">&dagger;</span></div>
             <div class="pub-meta">ICLR 2026</div>
             <div class="item-desc">
                 <ul>
@@ -350,18 +353,18 @@
 
         <div class="pub-item">
             <div class="pub-title">REVECA: Adaptive Planning and Trajectory-Based Validation in Cooperative Language Agents Using Information Relevance and Relative Proximity</div>
-            <div class="pub-authors">SeungWon Seo<span class="equal-note">*</span>, <strong>SeongRae Noh<span class="equal-note">*</span></strong>, Junhyeok Lee, SooBin Lim, Won Hee Lee, HyeongYeop Kang</div>
+            <div class="pub-authors">SeungWon Seo<span class="equal-note">*</span>, <strong>SeongRae Noh<span class="equal-note">*</span></strong>, Junhyeok Lee, SooBin Lim, Won Hee Lee, HyeongYeop Kang<span class="corr-note">&dagger;</span></div>
             <div class="pub-meta">AAAI 2025 (Oral Presentation)</div>
             <div class="item-desc">
                 <ul>
-                    <li>Developed a cooperative LLM-agent planning framework with relevance-filtered memory, proximity-aware coordination, and trajectory-based validation, achieving 47% performance improvement in noisy environments and increasing user preference by 73%.</li>
+                    <li>Developed a cooperative LLM-agent planning framework with relevance-filtered memory and trajectory-based validation, improving performance by 47% in noisy environments and user preference by 73%.</li>
                 </ul>
             </div>
         </div>
 
         <div class="pub-item">
             <div class="pub-title">Data-Driven Camera Manipulation about Vertical Locomotion in a Virtual Environment</div>
-            <div class="pub-authors">Seung-Won Seo, <strong>Seong-Rae Noh</strong>, Ro-Un Lee, Seung-Jun Park, Hyeong-Yeop Kang</div>
+            <div class="pub-authors">Seung-Won Seo, <strong>Seong-Rae Noh</strong>, Ro-Un Lee, Seung-Jun Park, Hyeong-Yeop Kang<span class="corr-note">&dagger;</span></div>
             <div class="pub-meta">Journal of the Korea Computer Graphics Society (JKCGS), 2022</div>
         </div>
     </section>
@@ -394,7 +397,7 @@
         </div>
         <div class="item">
             <span class="skill-label">Service:</span>
-            <span class="skill-text">Reviewer - ICML (2026), ACM MM (2025), Scientific Reports (2025); Student Volunteer - AAAI (2025)</span>
+            <span class="skill-text">Reviewer - NeurIPS, ICML (2026), ACM MM, Scientific Reports (2025); Student Volunteer - AAAI (2025)</span>
         </div>
     </section>
 
