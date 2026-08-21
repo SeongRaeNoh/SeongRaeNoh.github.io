@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.4.22)  20 AUG 2026 20:53
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.4.22)  21 AUG 2026 13:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -301,8 +301,14 @@ L3 programming layer <2026-03-20>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `cv_jakes.out' has not changed.
-(rerunfilecheck)             Checksum: 0DC047458DC42FF2CD02334AD88D5850;956.
+
+Package rerunfilecheck Warning: File `cv_jakes.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `cv_jakes.out':
+(rerunfilecheck)             Before: 0DC047458DC42FF2CD02334AD88D5850;956
+(rerunfilecheck)             After:  C5EF483A085D9AE897BBFDF8F78158B4;905.
  ) 
 Here is how much of TeX's memory you used:
  11120 strings out of 469972
