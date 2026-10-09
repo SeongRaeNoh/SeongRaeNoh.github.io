@@ -62,7 +62,9 @@
 % Sections formatting
 \titleformat{\section}{
   \vspace{-8pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-8pt}]
+}{}{0em}{}[\color{black}\titlerule \vspace{-11.5pt}\prevdepth=0pt]
+% \prevdepth=0pt puts the first line under the rule at the same baseline offset,
+% whether that line is plain text or a tabular entry heading
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \ifPDFTeX
@@ -70,19 +72,29 @@
 \fi
 
 %-------------------------
+% Vertical spacing for every section. Level 1 lists hold the entries of a section,
+% level 2 lists hold the bullets of an entry. Keep spacing here, not in the macros below.
+\setlist[itemize,1]{topsep=4pt, partopsep=0pt, itemsep=8pt, parsep=0pt}
+\setlist[itemize,2]{topsep=4pt, partopsep=0pt, itemsep=0pt, parsep=0pt,
+  beginpenalty=10000, midpenalty=10000}
+
+% Page breaks only between entries: never inside a paragraph or between an entry and its bullets
+\interlinepenalty=10000
+
+%-------------------------
 % Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{-6pt}}
+    {#1}
   }
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-3pt}\item
+  \item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-9pt}
+    \end{tabular*}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
@@ -94,9 +106,9 @@
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
-    \end{tabular*}\vspace{-4pt}
+    \end{tabular*}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
@@ -106,7 +118,7 @@
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-0pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -129,7 +141,7 @@
 \section{Research Summary}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     Integrated MS-Ph.D. student building LLM agents that turn open-ended instructions into verifiable action sequences in 3D environments --- spanning scene editing, multi-agent cooperation under partial observability, and camera control.
+     My research focuses on LLM agents, 3D scenes, and decision-making in interactive environments: LLM-based multi-agent cooperation in long-horizon and partially observable settings, decision-making under uncertainty, and goal-directed planning for verifiable actions in 3D scenes.
     }}
  \end{itemize}
 
@@ -138,8 +150,8 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Agentic AI \& LLMs}{: LLM Agents, Multi-Agent Systems, Agentic Planning, LLM Evaluation, HuggingFace Transformers} \\
-     \textbf{ML \& Embodied AI}{: PyTorch, Vision-Language Models, Embodied Task Planning, VirtualHome, Unreal Engine 5} \\
+     \textbf{Agentic AI \& LLMs}{: LLM Agents, Multi-Agent Systems, POMDPs, LLM Evaluation, HuggingFace Transformers} \\
+     \textbf{ML \& Embodied AI}{: PyTorch, vLLM, ThreeDWorld, VirtualHome, Unreal Engine 5} \\
      \textbf{Tools \& Languages}{: Python, C++, Docker, Git; Korean (Native), English (Advanced), Japanese (Intermediate)}
     }}
  \end{itemize}
@@ -185,28 +197,31 @@
 \section{Selected Publications}
   \resumeSubHeadingListStart
     \item
-      {\small\textbf{(SIGGRAPH Asia 2026, Conditionally Accepted) CuCaT: Cut-Structured Camera Trajectory Generation for Dance Music Videos}} \\
+      {\small\textbf{(SIGGRAPH Asia 2026) CuCaT: Cut-Structured Camera Trajectory Generation for Dance Music Videos}} \\*
       {\small SooBin Lim*, \textbf{SeongRae Noh*}, Jeongyoun Kwon, YoungBeom Kim, HyeongYeop Kang\textsuperscript{\dag}}
       \resumeItemListStart
         \resumeItem{Proposed a cut-structured camera formulation that separates cut and transition events over a performer-relative shot plan, achieving the best continuity and variation on the DCM benchmark while keeping the dancer visible in nearly every frame.}
       \resumeItemListEnd
-    \vspace{2pt}
     \item
-      {\small\textbf{(CVPR 2026) Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing}} \\
+      {\small\textbf{(NeurIPS 2026) Baba in Wonderland: Online Self-Supervised Dynamics Discovery for Executable World Models}} \\*
+      {\small SeungWon Seo*, DongHeun Han*, \textbf{SeongRae Noh}, HyeongYeop Kang\textsuperscript{\dag}}
+      \resumeItemListStart
+        \resumeItem{Proposed Alice, which learns executable world models online by turning rejected LLM program updates into hypothesis classes that guide both updates and exploration, reaching 0.97 balanced transition accuracy vs. below 0.20 for the closest baseline.}
+      \resumeItemListEnd
+    \item
+      {\small\textbf{(CVPR 2026) Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing}} \\*
       {\small\textbf{SeongRae Noh}, SeungWon Seo, Gyeong-Moon Park\textsuperscript{\dag}, HyeongYeop Kang\textsuperscript{\dag}}
       \resumeItemListStart
         \resumeItem{Formulated open-vocabulary 3D scene editing as agentic goal-regressive planning over world states, and introduced the E2A Benchmark, improving instruction fidelity by 20\% and semantic consistency by 43.1\%.}
       \resumeItemListEnd
-    \vspace{2pt}
     \item
-      {\small\textbf{(ICLR 2026) From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning for Embodied Agents}} \\
+      {\small\textbf{(ICLR 2026) From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning for Embodied Agents}} \\*
       {\small SeungWon Seo*, SooBin Lim*, \textbf{SeongRae Noh*}, Haneul Kim, HyeongYeop Kang\textsuperscript{\dag}}
       \resumeItemListStart
         \resumeItem{Proposed uncertainty-aware scenario tree planning for LLM agents under partial observability, converting latent assumptions into robust multi-agent decisions while reducing communication by 71.1\% and improving task performance by 8.6\%.}
       \resumeItemListEnd
-    \vspace{2pt}
     \item
-      {\small\textbf{(AAAI 2025 Oral) REVECA: Adaptive Planning and Trajectory-Based Validation in Cooperative Language Agents Using Information Relevance and Relative Proximity}} \\
+      {\small\textbf{(AAAI 2025 Oral) REVECA: Adaptive Planning and Trajectory-Based Validation in Cooperative Language Agents Using Information Relevance and Relative Proximity}} \\*
       {\small SeungWon Seo*, \textbf{SeongRae Noh*}, Junhyeok Lee, SooBin Lim, Won Hee Lee, HyeongYeop Kang\textsuperscript{\dag}}
       \resumeItemListStart
         \resumeItem{Developed a cooperative LLM-agent planning framework with relevance-filtered memory and trajectory-based validation, improving performance by 47\% in noisy environments and user preference by 73\%.}
@@ -230,8 +245,8 @@
 \section{Honors \& Service}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Awards}{: AAAI Student Scholarship (2025); Teaching Assistance Scholarship (2024); Pearl Abyss Fellowship (2023, 2021); 2nd place, KHU Software Convergence Inter-Club Competition (2022)} \\
-     \textbf{Service}{: Reviewer -- NeurIPS, ICML (2026), ACM MM, Scientific Reports (2025); Student Volunteer -- AAAI (2025)}
+     \textbf{Awards}{: Ph.D. Fellowship, National Research Foundation of Korea (2026, \$37,000); NeurIPS Top Reviewer (2026); AAAI Student Scholarship (2025); Teaching Assistance Scholarship (2024); Pearl Abyss Fellowship (2023, 2021); 2nd place, KHU Software Convergence Inter-Club Competition (2022)} \\
+     \textbf{Service}{: Reviewer -- ICLR (2027), NeurIPS, ICML (2026), ACM MM, Scientific Reports (2025); Student Volunteer -- SIGGRAPH Asia (2026), AAAI (2025)}
     }}
  \end{itemize}
 

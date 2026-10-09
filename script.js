@@ -24,6 +24,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fadeElements.forEach(el => observer.observe(el));
 
+    // --- News: show the most recent items, expand the rest on demand ---
+    // Must match the nth-child(n+6) rule in style.css
+    const NEWS_VISIBLE = 5;
+    const newsList = document.getElementById('news-list');
+    const newsToggle = document.getElementById('news-toggle');
+
+    if (newsList && newsToggle && newsList.querySelectorAll('.news-item').length > NEWS_VISIBLE) {
+        const label = newsToggle.querySelector('.news-toggle-label');
+        const icon = newsToggle.querySelector('.news-toggle-icon');
+        newsToggle.hidden = false;
+
+        newsToggle.addEventListener('click', () => {
+            const expanded = newsList.classList.toggle('expanded');
+            newsToggle.setAttribute('aria-expanded', String(expanded));
+            label.textContent = expanded ? 'Show less' : 'Show more';
+            icon.textContent = expanded ? '−' : '+';
+        });
+    }
+
     // --- Navigation scroll effect ---
     const nav = document.getElementById('nav');
     let lastScroll = 0;
