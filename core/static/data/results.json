@@ -1,0 +1,1088 @@
+{
+ "sizes": [
+  {
+   "size": "0.85B",
+   "model": "d3-lite",
+   "base_partition_tv/merge": [
+    14.764780439576807,
+    0.0,
+    1
+   ],
+   "core_partition_tv/merge": [
+    5.846508838819562,
+    0.15149838784698413,
+    5
+   ],
+   "base_H:partition_tv/merge": [
+    25.73966136996565,
+    0.0,
+    1
+   ],
+   "core_H:partition_tv/merge": [
+    8.523333922561092,
+    0.2039365156165253,
+    5
+   ],
+   "base_acc_desc/all": [
+    60.833646263612465,
+    0.0,
+    1
+   ],
+   "core_acc_desc/all": [
+    67.14983101764928,
+    0.7674933944593123,
+    5
+   ],
+   "gap_base": [
+    -11.484405696413832,
+    0.0
+   ],
+   "gap_core": [
+    -0.6368850663513596,
+    0.9331618579996321
+   ]
+  },
+  {
+   "size": "2.2B",
+   "model": "d3-nano",
+   "base_partition_tv/merge": [
+    14.289057289407378,
+    0.0,
+    1
+   ],
+   "core_partition_tv/merge": [
+    5.726831648014839,
+    0.8278679050407844,
+    3
+   ],
+   "base_H:partition_tv/merge": [
+    28.908494683697068,
+    0.0,
+    1
+   ],
+   "core_H:partition_tv/merge": [
+    10.183098475893102,
+    1.6756969417087775,
+    3
+   ],
+   "base_acc_desc/all": [
+    67.88083614970584,
+    0.0,
+    1
+   ],
+   "core_acc_desc/all": [
+    72.76254850419326,
+    0.9018125928322244,
+    3
+   ],
+   "gap_base": [
+    -9.000798696158743,
+    0.0
+   ],
+   "gap_core": [
+    -0.8921784897963447,
+    0.7382989959068349
+   ]
+  },
+  {
+   "size": "4.5B",
+   "model": "d3-mini",
+   "base_partition_tv/merge": [
+    16.407959801541054,
+    0.0,
+    1
+   ],
+   "core_partition_tv/merge": [
+    4.646989775292578,
+    0.6020558609764401,
+    3
+   ],
+   "base_H:partition_tv/merge": [
+    38.297048063827354,
+    0.0,
+    1
+   ],
+   "core_H:partition_tv/merge": [
+    8.109935046014739,
+    0.8508559819680804,
+    3
+   ],
+   "base_acc_desc/all": [
+    71.56089623231944,
+    0.0,
+    1
+   ],
+   "core_acc_desc/all": [
+    77.06846914507449,
+    0.5657600722418406,
+    3
+   ],
+   "gap_base": [
+    -9.33002808010286,
+    0.0
+   ],
+   "gap_core": [
+    -1.2265853534995645,
+    2.2659429964278255
+   ]
+  },
+  {
+   "size": "8.4B",
+   "model": "d3-flash",
+   "base_partition_tv/merge": [
+    15.007664106468226,
+    0.0,
+    1
+   ],
+   "core_partition_tv/merge": [
+    4.821881520430624,
+    0.39925297945425836,
+    3
+   ],
+   "base_H:partition_tv/merge": [
+    35.65750343948596,
+    0.0,
+    1
+   ],
+   "core_H:partition_tv/merge": [
+    9.24375604073605,
+    0.8914292467559557,
+    3
+   ],
+   "base_acc_desc/all": [
+    72.61234197020904,
+    0.0,
+    1
+   ],
+   "core_acc_desc/all": [
+    77.17695164184087,
+    0.546045128048424,
+    3
+   ],
+   "gap_base": [
+    -8.719762913064498,
+    0.0
+   ],
+   "gap_core": [
+    -0.8980238851060313,
+    1.4716701791904003
+   ]
+  },
+  {
+   "size": "26B",
+   "model": "d3-big",
+   "base_partition_tv/merge": [
+    10.229612229226856,
+    0.0,
+    1
+   ],
+   "core_partition_tv/merge": [
+    4.097863281082146,
+    0.4031741764510426,
+    3
+   ],
+   "base_H:partition_tv/merge": [
+    23.548621718390244,
+    0.0,
+    1
+   ],
+   "core_H:partition_tv/merge": [
+    8.107875518207612,
+    1.1049820559153745,
+    3
+   ],
+   "base_acc_desc/all": [
+    78.18250093879084,
+    0.0,
+    1
+   ],
+   "core_acc_desc/all": [
+    81.37856218967747,
+    1.1061671883610815,
+    3
+   ],
+   "gap_base": [
+    -5.366097367392558,
+    0.0
+   ],
+   "gap_core": [
+    0.06291389686403384,
+    0.9603116476586586
+   ]
+  }
+ ],
+ "regrouped_lite": [
+  {
+   "name": "SFT",
+   "pub_partition_tv/merge": 19.29097137820219,
+   "pub_H:partition_tv/merge": 27.767175401485826,
+   "pub_acc_desc/all": 66.64997705177953,
+   "dag_partition_tv/merge": 10.432742892588658,
+   "dag_H:partition_tv/merge": 12.581254524064258,
+   "dag_acc_desc/all": 69.2577293778946
+  },
+  {
+   "name": "LLM-as-Jev",
+   "pub_partition_tv/merge": 14.376932989340121,
+   "pub_H:partition_tv/merge": 21.154223338427066,
+   "pub_acc_desc/all": 66.78766637459842,
+   "dag_partition_tv/merge": 9.380729648819853,
+   "dag_H:partition_tv/merge": 12.171343917794362,
+   "dag_acc_desc/all": 68.99904034714397
+  },
+  {
+   "name": "ACRE",
+   "pub_partition_tv/merge": 15.941966983438736,
+   "pub_H:partition_tv/merge": 23.74207286937873,
+   "pub_acc_desc/all": 66.39963282847249,
+   "dag_partition_tv/merge": 11.484669606525523,
+   "dag_H:partition_tv/merge": 16.408526599712854,
+   "dag_acc_desc/all": 65.3982559352443
+  },
+  {
+   "name": "PA-GRPO",
+   "pub_partition_tv/merge": 16.026744328914397,
+   "pub_H:partition_tv/merge": 24.58135100559255,
+   "pub_acc_desc/all": 63.762673676304914,
+   "dag_partition_tv/merge": 12.13875797348442,
+   "dag_H:partition_tv/merge": 19.072509199386257,
+   "dag_acc_desc/all": 64.64305086160137
+  }
+ ],
+ "table_lite": [
+  {
+   "ours": false,
+   "cells": [
+    {
+     "text": "Base model"
+    },
+    {
+     "v": "60.8",
+     "sd": null,
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "5.6",
+     "sd": null,
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "48.4",
+     "sd": null,
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "14.8",
+     "sd": null,
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "25.7",
+     "sd": null,
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "5.5",
+     "sd": null,
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "5.5",
+     "sd": null,
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "6.4",
+     "sd": null,
+     "best": false,
+     "second": false
+    }
+   ]
+  },
+  {
+   "ours": false,
+   "cells": [
+    {
+     "text": "SFT"
+    },
+    {
+     "v": "66.6",
+     "sd": "1.2",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "21.3",
+     "sd": "1.9",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "52.5",
+     "sd": "0.3",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "19.3",
+     "sd": "1.0",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "27.8",
+     "sd": "1.5",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "9.5",
+     "sd": "0.3",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "10.4",
+     "sd": "0.3",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "12.3",
+     "sd": "0.5",
+     "best": false,
+     "second": false
+    }
+   ]
+  },
+  {
+   "ours": false,
+   "cells": [
+    {
+     "text": "LLM-as-Jev"
+    },
+    {
+     "v": "66.8",
+     "sd": "0.5",
+     "best": false,
+     "second": true
+    },
+    {
+     "v": "1.9",
+     "sd": "0.6",
+     "best": false,
+     "second": true
+    },
+    {
+     "v": "42.9",
+     "sd": "0.8",
+     "best": false,
+     "second": true
+    },
+    {
+     "v": "14.4",
+     "sd": "0.8",
+     "best": false,
+     "second": true
+    },
+    {
+     "v": "21.2",
+     "sd": "1.4",
+     "best": false,
+     "second": true
+    },
+    {
+     "v": "6.3",
+     "sd": "0.3",
+     "best": false,
+     "second": true
+    },
+    {
+     "v": "7.1",
+     "sd": "0.4",
+     "best": false,
+     "second": true
+    },
+    {
+     "v": "7.4",
+     "sd": "0.2",
+     "best": false,
+     "second": true
+    }
+   ]
+  },
+  {
+   "ours": false,
+   "cells": [
+    {
+     "text": "ACRE"
+    },
+    {
+     "v": "66.4",
+     "sd": "0.6",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "7.4",
+     "sd": "1.8",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "44.6",
+     "sd": "1.4",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "15.9",
+     "sd": "1.7",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "23.7",
+     "sd": "1.7",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "10.0",
+     "sd": "2.8",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "8.5",
+     "sd": "1.6",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "10.3",
+     "sd": "2.6",
+     "best": false,
+     "second": false
+    }
+   ]
+  },
+  {
+   "ours": false,
+   "cells": [
+    {
+     "text": "PA-GRPO"
+    },
+    {
+     "v": "63.8",
+     "sd": "0.3",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "16.8",
+     "sd": "0.8",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "51.9",
+     "sd": "1.2",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "16.0",
+     "sd": "1.3",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "24.6",
+     "sd": "1.4",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "10.6",
+     "sd": "2.6",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "9.9",
+     "sd": "2.2",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "11.4",
+     "sd": "1.4",
+     "best": false,
+     "second": false
+    }
+   ]
+  },
+  {
+   "ours": true,
+   "cells": [
+    {
+     "text": "Core (ours)"
+    },
+    {
+     "v": "67.1",
+     "sd": "0.6",
+     "best": true,
+     "second": false
+    },
+    {
+     "v": "1.7",
+     "sd": "0.1",
+     "best": true,
+     "second": false
+    },
+    {
+     "v": "42.4",
+     "sd": "0.5",
+     "best": true,
+     "second": false
+    },
+    {
+     "v": "5.8",
+     "sd": "0.1",
+     "best": true,
+     "second": false
+    },
+    {
+     "v": "8.5",
+     "sd": "0.2",
+     "best": true,
+     "second": false
+    },
+    {
+     "v": "4.1",
+     "sd": "0.2",
+     "best": true,
+     "second": false
+    },
+    {
+     "v": "4.5",
+     "sd": "0.2",
+     "best": true,
+     "second": false
+    },
+    {
+     "v": "5.2",
+     "sd": "0.2",
+     "best": true,
+     "second": false
+    }
+   ]
+  }
+ ],
+ "table_flash": [
+  {
+   "ours": false,
+   "cells": [
+    {
+     "text": "Base model"
+    },
+    {
+     "v": "72.6",
+     "sd": null,
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "73.2",
+     "sd": null,
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "3.5",
+     "sd": null,
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "35.3",
+     "sd": null,
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "15.0",
+     "sd": null,
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "35.7",
+     "sd": null,
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "5.9",
+     "sd": null,
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "6.7",
+     "sd": null,
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "12.2",
+     "sd": null,
+     "best": false,
+     "second": false
+    }
+   ]
+  },
+  {
+   "ours": false,
+   "cells": [
+    {
+     "text": "SFT"
+    },
+    {
+     "v": "78.5",
+     "sd": "0.2",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "79.0",
+     "sd": "0.2",
+     "best": false,
+     "second": true
+    },
+    {
+     "v": "14.5",
+     "sd": "0.8",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "34.7",
+     "sd": "1.0",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "14.5",
+     "sd": "0.4",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "28.1",
+     "sd": "0.4",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "6.1",
+     "sd": "0.2",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "6.5",
+     "sd": "0.0",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "10.9",
+     "sd": "0.7",
+     "best": false,
+     "second": false
+    }
+   ]
+  },
+  {
+   "ours": false,
+   "cells": [
+    {
+     "text": "LLM-as-Jev"
+    },
+    {
+     "v": "78.0",
+     "sd": "0.6",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "77.4",
+     "sd": "0.8",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "1.8",
+     "sd": "0.5",
+     "best": true,
+     "second": false
+    },
+    {
+     "v": "29.3",
+     "sd": "0.8",
+     "best": false,
+     "second": true
+    },
+    {
+     "v": "11.5",
+     "sd": "0.1",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "19.4",
+     "sd": "1.1",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "4.8",
+     "sd": "0.3",
+     "best": false,
+     "second": true
+    },
+    {
+     "v": "4.8",
+     "sd": "0.2",
+     "best": false,
+     "second": true
+    },
+    {
+     "v": "6.5",
+     "sd": "0.6",
+     "best": false,
+     "second": true
+    }
+   ]
+  },
+  {
+   "ours": false,
+   "cells": [
+    {
+     "text": "ACRE"
+    },
+    {
+     "v": "76.1",
+     "sd": "0.5",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "76.1",
+     "sd": "0.2",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "4.8",
+     "sd": "0.4",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "32.4",
+     "sd": "0.4",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "13.5",
+     "sd": "1.4",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "26.1",
+     "sd": "4.4",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "6.9",
+     "sd": "0.8",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "6.6",
+     "sd": "0.6",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "9.8",
+     "sd": "1.1",
+     "best": false,
+     "second": false
+    }
+   ]
+  },
+  {
+   "ours": false,
+   "cells": [
+    {
+     "text": "PA-GRPO"
+    },
+    {
+     "v": "76.3",
+     "sd": "0.7",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "75.8",
+     "sd": "0.5",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "10.3",
+     "sd": "0.9",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "35.0",
+     "sd": "1.3",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "13.9",
+     "sd": "0.9",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "28.8",
+     "sd": "2.6",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "7.2",
+     "sd": "0.3",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "7.1",
+     "sd": "0.8",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "12.0",
+     "sd": "2.3",
+     "best": false,
+     "second": false
+    }
+   ]
+  },
+  {
+   "ours": false,
+   "cells": [
+    {
+     "text": "SFT$^\\dagger$"
+    },
+    {
+     "v": "80.7",
+     "sd": "0.4",
+     "best": true,
+     "second": false
+    },
+    {
+     "v": "79.4",
+     "sd": "1.2",
+     "best": true,
+     "second": false
+    },
+    {
+     "v": "12.0",
+     "sd": "0.2",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "30.3",
+     "sd": "0.5",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "7.3",
+     "sd": "1.0",
+     "best": false,
+     "second": true
+    },
+    {
+     "v": "14.9",
+     "sd": "1.5",
+     "best": false,
+     "second": true
+    },
+    {
+     "v": "5.0",
+     "sd": "0.4",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "5.3",
+     "sd": "0.6",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "9.4",
+     "sd": "0.5",
+     "best": false,
+     "second": false
+    }
+   ]
+  },
+  {
+   "ours": false,
+   "cells": [
+    {
+     "text": "LLM-as-Jev$^\\dagger$"
+    },
+    {
+     "v": "79.4",
+     "sd": "0.6",
+     "best": false,
+     "second": true
+    },
+    {
+     "v": "77.4",
+     "sd": "0.8",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "2.2",
+     "sd": "0.6",
+     "best": false,
+     "second": true
+    },
+    {
+     "v": "28.1",
+     "sd": "0.7",
+     "best": true,
+     "second": false
+    },
+    {
+     "v": "12.1",
+     "sd": "0.7",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "26.6",
+     "sd": "1.0",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "5.3",
+     "sd": "0.5",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "10.7",
+     "sd": "0.6",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "11.2",
+     "sd": "0.2",
+     "best": false,
+     "second": false
+    }
+   ]
+  },
+  {
+   "ours": true,
+   "cells": [
+    {
+     "text": "Core (ours)"
+    },
+    {
+     "v": "77.2",
+     "sd": "0.2",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "75.3",
+     "sd": "0.4",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "2.3",
+     "sd": "0.3",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "30.2",
+     "sd": "0.2",
+     "best": false,
+     "second": false
+    },
+    {
+     "v": "4.8",
+     "sd": "0.2",
+     "best": true,
+     "second": false
+    },
+    {
+     "v": "9.2",
+     "sd": "0.4",
+     "best": true,
+     "second": false
+    },
+    {
+     "v": "3.8",
+     "sd": "0.1",
+     "best": true,
+     "second": false
+    },
+    {
+     "v": "4.0",
+     "sd": "0.1",
+     "best": true,
+     "second": false
+    },
+    {
+     "v": "5.0",
+     "sd": "0.1",
+     "best": true,
+     "second": false
+    }
+   ]
+  }
+ ]
+}

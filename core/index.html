@@ -1,234 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Coherent Probabilities for Vision Decision Models (Core)</title>
-  <meta name="description" content="When “A or B” Is Less Likely than A: Coherent Probabilities for Vision Decision Models. Core trains vision decision models so that a merged option receives the summed probability of the options it contains.">
-  <meta property="og:title" content="When “A or B” Is Less Likely than A: Coherent Probabilities for Vision Decision Models">
-  <meta property="og:description" content="Vision decision models give a merged option “A or B” less probability than the sum of A and B. Core trains the answers to regrouped questions toward one target distribution.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://seongraenoh.github.io/core/">
-  <meta property="og:image" content="https://seongraenoh.github.io/core/static/images/teaser.png">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Core · Coherent Probabilities for Vision Decision Models</title>
+<meta name="description" content="Vision decision models give a merged option “A or B” less probability than the sum of A and B. Core trains the answers to regrouped questions toward one target distribution.">
+<meta property="og:title" content="When “A or B” Is Less Likely than A: Coherent Probabilities for Vision Decision Models">
+<meta property="og:description" content="A merged option “A or B” receives on average 11.5 points less probability than the sum of A and B. Core reduces the partition violation from 14.8 to 5.8 points.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://seongraenoh.github.io/core/">
+<meta property="og:image" content="https://seongraenoh.github.io/core/static/images/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20x%3D%223%22%20y%3D%225%22%20width%3D%2212%22%20height%3D%226%22%20rx%3D%222%22%20fill%3D%22%233b7dd8%22%2F%3E%3Crect%20x%3D%2217%22%20y%3D%225%22%20width%3D%2212%22%20height%3D%226%22%20rx%3D%222%22%20fill%3D%22%23eb6834%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%2214%22%20width%3D%2226%22%20height%3D%226%22%20rx%3D%222%22%20fill%3D%22%232a78d6%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%2223%22%20width%3D%2226%22%20height%3D%224%22%20rx%3D%222%22%20fill%3D%22%2315171c%22%20opacity%3D%22.25%22%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;650;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
-      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
-    </a>
+<nav class="nav" id="nav"><div class="wrap">
+  <a class="brand" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="5" width="12" height="6" rx="2" fill="#3b7dd8"/><rect x="17" y="5" width="12" height="6" rx="2" fill="#eb6834"/><rect x="3" y="14" width="26" height="6" rx="2" fill="#2a78d6"/><rect x="3" y="23" width="26" height="4" rx="2" fill="#15171c" opacity=".18"/></svg><span>Core</span></a>
+  <div class="nav-links">
+    <a href="#video">Video</a><a href="#problem">Problem</a><a href="#try">Try it</a><a href="#method">Method</a><a href="#results">Results</a><a href="#cite">Cite</a>
   </div>
-  <div id="navbarMenu" class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="../"><span class="icon"><i class="fas fa-home"></i></span></a>
-    </div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div class="eyebrow"><i></i>Preprint · 2026</div>
+  <h1>When <span class="or">“A or B”</span><br>Is Less Likely than&nbsp;A</h1>
+  <p class="subtitle">Coherent Probabilities for Vision Decision Models</p>
+  <div class="authors">
+    <a href="https://seongraenoh.github.io/">Seongrae Noh</a>
+    <span>SeongEun Hong</span>
+    <span>HyeongYeop Kang<sup>†</sup></span>
   </div>
-</nav>
+  <div class="affil"><span>Korea University</span><span><sup>†</sup>Corresponding author</span></div>
+  <div class="links">
+    <a class="btn" href="static/pdf/core_paper.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6M9 18h4"/></svg>Paper</a>
+    <!--ARXIV_BUTTON_START--><span class="btn off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 4l14 16M19 4L5 20"/></svg>arXiv <small>soon</small></span><!--ARXIV_BUTTON_END-->
+    <a class="btn ghost" href="#video"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Video</a>
+    <span class="btn off"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6a4.7 4.7 0 0 1 1.2-3.2c-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.3 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.2c0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>Code <small>soon</small></span>
+    <a class="btn ghost" href="#cite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 7h4v4H8a3 3 0 0 0 3 3v2a5 5 0 0 1-5-5V7zM15 7h4v4h-3a3 3 0 0 0 3 3v2a5 5 0 0 1-5-5V7z"/></svg>BibTeX</a>
+  </div>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-2 publication-title">When “A or B” Is Less Likely than A:<br>Coherent Probabilities for Vision Decision Models</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><a href="../">Seongrae Noh</a>,</span>
-            <span class="author-block">SeongEun Hong,</span>
-            <span class="author-block">HyeongYeop Kang<sup>&dagger;</sup></span>
-          </div>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Korea University</span>
-          </div>
-          <div class="is-size-6 publication-authors corresponding">
-            <span class="author-block"><sup>&dagger;</sup>Corresponding author</span>
-          </div>
-
-          <div class="publication-links">
-            <span class="link-block">
-              <a href="static/pdf/core_paper.pdf" class="external-link button is-normal is-rounded is-dark" target="_blank">
-                <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
-              </a>
-            </span>
-            <!--ARXIV_BUTTON_START-->
-            <span class="link-block">
-              <a class="external-link button is-normal is-rounded is-dark is-disabled" aria-disabled="true">
-                <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv (coming soon)</span>
-              </a>
-            </span>
-            <!--ARXIV_BUTTON_END-->
-            <span class="link-block">
-              <a href="#video" class="button is-normal is-rounded is-dark">
-                <span class="icon"><i class="fas fa-video"></i></span><span>Video</span>
-              </a>
-            </span>
-            <span class="link-block">
-              <a class="external-link button is-normal is-rounded is-dark is-disabled" aria-disabled="true">
-                <span class="icon"><i class="fab fa-github"></i></span><span>Code (coming soon)</span>
-              </a>
-            </span>
-          </div>
-        </div>
+  <div class="teaser reveal" id="teaser">
+    <div class="pa">
+      <figure class="img"><img src="static/images/teaser_item.jpg" alt="A dog lying on a cushion with a guitar in the upper left corner."><figcaption>RealWorldQA · d3-lite (0.85B)</figcaption></figure>
+      <div>
+        <div class="panel-t"><span>(a) One image, two questions</span><button class="replay" id="replay" type="button">↺ replay</button></div>
+        <p class="tq">Q: Where is the guitar relative to the dog?</p>
+        <div class="tgrid" id="tgrid"></div>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body has-text-centered">
-      <img src="static/images/teaser.png" class="figure-img" alt="A vision decision model gives the merged option 'upper left or bottom right' 0.31 although it gives 'upper left' 0.98 on the original question; Core gives the merged option 0.93.">
-      <p class="caption">
-        <b>A vision decision model assigns a merged option less probability than one of the options it contains.</b>
-        (a) d3-lite on a RealWorldQA item (correct answer: upper left; option texts abbreviated; question 1 averaged over three option orders).
-        Dashed boxes: the sum of the two options in question 1, the probability that coherence requires.
-        (b) Share of the 3,427 merged options of the evaluation set that receive at least 0.05 less than the most probable option they contain (mean over seeds).
-        LLM-as-Jev<sup>&dagger;</sup>: trained on our regrouped questions.
-      </p>
+    <div class="pb">
+      <div class="panel-t"><span>(b) All 3,427 merged options</span></div>
+      <p class="small">Share of merged options that receive at least 0.05 less than the most probable option they contain (d3-lite, mean over seeds).</p>
+      <div id="shares"></div>
     </div>
   </div>
-</section>
+  <p class="tcap">Question 1 is averaged over three option orders; option texts abbreviated. Dashed box: the sum of the two options in question 1, the probability that coherence requires. LLM-as-Jev<sup>†</sup>: trained on our regrouped questions.</p>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Vision decision models answer a multiple-choice question about an image with one probability per option, and software
-            uses them directly. We show that the probabilities depend on how the options are grouped: a merged option
-            “A&nbsp;or&nbsp;B” receives on average 11.5 points less probability than the sum of A and B. This under-additivity appears
-            at every model size from 0.85B to 26B and remains after fine-tuning on labels. We propose <span class="method">Core</span>,
-            which asks each training question with its options regrouped and trains the answers to all these questions toward one
-            target distribution over the original options, summed into each question’s groups. On 1,050 items from seven benchmarks,
-            <span class="method">Core</span> reduces the total variation distance between the answer to a regrouped question and the
-            original answer summed into the same groups from 14.8 to 5.8 points on the 0.85B model, against 9.4 for the best baseline
-            trained on the same questions. At all five model sizes, <span class="method">Core</span> reduces this distance without
-            lowering accuracy.
-          </p>
-        </div>
+  <p class="tagline reveal">Merging two options should never lower their probability, yet the model gives <em>“upper left or bottom right”</em> 0.31 after giving “upper left” 0.98. <b class="sc">Core</b> trains the answers to every regrouping of a question toward one target.</p>
+</div></header>
+
+<section class="s" id="video"><div class="wrap">
+  <div class="s-head reveal"><div class="eyebrow">00 · Video</div><h2>The paper in three and a half minutes</h2></div>
+  <div class="video-card reveal" id="vcard">
+    <video id="vid" preload="none" playsinline controls hidden><source src="static/video/core_video.mp4" type="video/mp4"></video>
+    <div class="poster" id="poster" role="button" tabindex="0" aria-label="Play the video">
+      <div class="viz">
+        <div style="width:98%;background:#9a9893">upper left · 0.98</div>
+        <div style="width:31%;background:#ff8f8f">A or B · 0.31</div>
+        <div style="width:93%;background:#7fb3ff">A or B · 0.93 (Core)</div>
+      </div>
+      <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="pt">When <span>“A or B”</span> is less likely than A</div>
+      <div class="ps">Narrated overview · problem, method and results</div>
+      <div class="meta">▶ with sound · 3:36</div>
+    </div>
+  </div>
+  <div class="chapters" id="chapters"></div>
+</div></section>
+
+<section class="s" id="problem"><div class="wrap">
+  <div class="s-head reveal"><div class="eyebrow">01 · The observation</div>
+    <h2>Regrouping the options changes the probabilities</h2>
+    <p>Vision decision models answer a multiple-choice question about an image with one probability per option, and software uses these probabilities directly. The options are mutually exclusive, so a merged option “A or B” should receive the probability of A plus that of B. It receives less.</p></div>
+  <div class="obs">
+    <div class="card reveal"><div class="big" style="color:var(--red)">−11.5<small>pts</small></div>
+      <h3>A merged option falls short of its members</h3>
+      <p>Mean additivity error of the d3-lite base model over the 3,427 merged options of the evaluation set: the merged option’s probability minus the sum of its members’ probabilities.</p>
+      <div class="mini"><div class="mini-row"><span>A + B</span><div class="stack" style="width:100%"><div style="flex:.55;background:var(--oA)"></div><div style="flex:.30;background:var(--oB)"></div><div style="flex:.15"></div></div><span class="num">.85</span></div>
+      <div class="mini-row"><span>“A or B”</span><div class="stack" style="width:100%"><div style="flex:.735;background:#a88fd6"></div><div style="flex:.265;background:repeating-linear-gradient(135deg,rgba(208,59,59,.18) 0 4px,transparent 4px 8px);border:1px dashed var(--red);border-left:0"></div></div><span class="num">.74</span></div>
+      <div style="font-size:11.5px;color:var(--muted);margin-top:4px">illustration of an 11.5-point shortfall</div></div></div>
+    <div class="card reveal"><div class="big">5<small>/ 5 sizes</small></div>
+      <h3>It appears at every model size</h3>
+      <p>Mean additivity error of the base model from 0.85B to 26B parameters; <span class="core-name">Core</span> brings it close to zero at each size.</p>
+      <div class="mini" id="mini-sizes"></div></div>
+    <div class="card reveal"><div class="big">32<small>%</small></div>
+      <h3>Fine-tuning on labels does not remove it</h3>
+      <p>After supervised fine-tuning (SFT), 32% of merged options still receive at least 0.05 less than their most probable member (base model: 31%).</p>
+      <div class="mini" id="mini-mono"></div></div>
+  </div>
+  <figure class="fig reveal"><img src="static/images/additivity.png" alt="Hexagon-binned density of merged-option probability against the sum of member probabilities for the base model, SFT and Core, and mean additivity error per model size.">
+    <figcaption class="cap"><b>Merged options receive less than the sum of their members, and fine-tuning on labels does not remove it.</b> The left three panels bin the 3,427 merged options of the d3-lite evaluation; darker hexagons hold more merged options (log scale). <i>x</i>: the sum of its members’ probabilities on the original question; <i>y</i>: its probability on the merged question; dashed: perfect additivity. Right: mean additivity error in points for each model size (base: the model before fine-tuning; <span class="core-name">Core</span>: mean over seeds with 95% interval).</figcaption></figure>
+  <div class="card callout reveal"><div class="big">18.6%</div><div><b>The grouping changes decisions.</b> At a threshold of 0.5, the decision taken from a merged option differs from the one implied by the original question for 18.6% of merged options with the base model, 8.4% with LLM-as-Jev<sup>†</sup> and 7.4% with <span class="core-name">Core</span> (d3-lite).</div></div>
+</div></section>
+
+<section class="s" id="try"><div class="wrap">
+  <div class="s-head reveal"><div class="eyebrow">02 · Try it</div>
+    <h2>Regroup the options yourself</h2>
+    <p>Pick an item of the evaluation set and ask it the ways we test. The bars are the actual answers of the d3-lite base model and of d3-lite trained with <span class="core-name">Core</span>. The dashed box is what a coherent model would answer: its own answer to the original question, summed into the new groups.</p></div>
+  <div class="play-shell reveal">
+    <div class="play-top">
+      <div class="seg" id="pool"><button data-p="featured" class="on">Featured</button><button data-p="random">Random items</button></div>
+      <div class="pnav">
+        <button class="icon-btn" id="prev" aria-label="Previous item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="icon-btn" id="shuffle" aria-label="Random item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></button>
+        <button class="icon-btn" id="next" aria-label="Next item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg></button>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="section" id="video">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="video-wrap">
-          <video controls preload="metadata" playsinline>
-            <source src="static/video/core_video.mp4" type="video/mp4">
-          </video>
-        </div>
-        <p class="caption has-text-centered">Narrated overview.</p>
+    <div class="thumbs" id="thumbs"></div>
+    <div class="play-main">
+      <div class="pcard">
+        <div class="pimgs" id="pimgs"></div>
+        <div class="pmeta" id="pmeta"></div>
+        <p class="pq" id="pq"></p>
+      </div>
+      <div class="pcard">
+        <div class="forms" id="forms"></div>
+        <p class="fdesc" id="fdesc"></p>
+        <div class="legend"><span><i style="background:var(--base)"></i>Base model</span><span><i style="background:var(--core)"></i><span class="sc">Core</span></span><span><i class="t"></i>coherent answer</span></div>
+        <div id="orows"></div>
+        <div class="metric" id="metric"></div>
       </div>
     </div>
+    <p class="pnote" id="pnote"></p>
   </div>
-</section>
+</div></section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Merged options receive less than the sum of their members</h2>
-    <div class="has-text-centered">
-      <img src="static/images/additivity.png" class="figure-img" alt="Hexagon-binned scatter of merged-option probability against the sum of member probabilities, below the diagonal, and additivity error at five model sizes.">
-    </div>
-    <p class="caption">
-      <b>Merged options receive less than the sum of their members, and fine-tuning on labels does not remove it.</b>
-      The left three panels bin the 3,427 merged options of the d3-lite evaluation; darker hexagons hold more merged options (log scale).
-      <i>x</i>: the sum of its members’ probabilities on the original question; <i>y</i>: its probability on the merged question;
-      dashed: perfect additivity. Right: mean additivity error in points for each model size (base: the model before fine-tuning;
-      <span class="method">Core</span>: mean over seeds with 95% interval).
-    </p>
+<section class="s" id="method"><div class="wrap">
+  <div class="s-head reveal"><div class="eyebrow">03 · Method</div>
+    <h2>One target for every way of asking</h2>
+    <p><span class="core-name">Core</span> (coherence under regrouping) asks each training item with its options regrouped and trains the answers to all these questions toward one target distribution over the original options, summed into each question’s groups. Numbers below are illustrative.</p></div>
+  <div class="method reveal">
+    <div class="steps" id="steps"></div>
+    <div class="card stage" id="stage"></div>
   </div>
-</section>
+  <details class="paperfig"><summary>Show the method figure of the paper</summary><img src="static/images/overview.png" alt="Method figure of the paper."></details>
+</div></section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Method</h2>
-    <div class="has-text-centered">
-      <img src="static/images/overview.png" class="figure-img" alt="Overview of Core: original and regrouped questions, one target distribution, sampled answers and log-ratio reward.">
-    </div>
-    <p class="caption">
-      <b><span class="method">Core</span> in one step.</b>
-      (a) A training item is asked as its original question and as regrouped questions.
-      (b) The frozen model’s answer to the original question, mixed 0.7 to 0.3 with the smoothed label, gives one target <i>q</i>
-      over the original options; each regrouped question gets <i>q</i> regrouped the same way.
-      (c) The trained model answers the regrouped question, and 16 answers are sampled.
-      (d) The reward of each sample is the log-ratio of its target and model probability; advantages are divided by one reward
-      scale shared across questions, and the LoRA weights are updated. Shown for the question with a merged option; numbers are illustrative.
-    </p>
+<section class="s" id="results"><div class="wrap">
+  <div class="s-head reveal"><div class="eyebrow">04 · Results</div>
+    <h2>Lower partition violation at every size</h2>
+    <p>Partition violation: the total variation distance between the answer to a regrouped question and the original answer summed into the same groups (×100, lower is better). Evaluation: 1,050 items from seven benchmarks, 8,250 questions.</p></div>
+  <div class="tiles">
+    <div class="card tile reveal"><div class="k">Partition violation · d3-lite</div><div class="v"><span class="from">14.8</span><span class="arr">→</span><span class="to">5.8</span></div><div class="s">Best baseline trained on the same regrouped questions: 9.4.</div></div>
+    <div class="card tile reveal"><div class="k">Mean additivity error</div><div class="v"><span class="from">−11.5</span><span class="arr">→</span><span class="to">−0.6</span></div><div class="s">Points, over all 3,427 merged options (d3-lite).</div></div>
+    <div class="card tile reveal"><div class="k">Calibration error (ECE)</div><div class="v"><span class="from">5.6</span><span class="arr">→</span><span class="to">1.7</span></div><div class="s">Lowest ECE among trained methods; accuracy 60.8 → 67.1.</div></div>
+    <div class="card tile reveal"><div class="k">Decisions changed by grouping</div><div class="v"><span class="from">18.6</span><span class="arr">→</span><span class="to">7.4%</span></div><div class="s">Threshold 0.5, merged options of the evaluation set.</div></div>
   </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Results</h2>
-    <div class="columns is-centered">
-      <div class="column is-half">
-        <div class="has-text-centered">
-          <img src="static/images/sizes.png" class="figure-img" alt="Partition violation and accuracy of the base model and Core at five model sizes.">
-        </div>
-        <p class="caption">
-          <b>Base model and <span class="method">Core</span> at five model sizes.</b>
-          Partition violation on all and on hard items, and Acc. (&times;100). Gray: base model;
-          blue: <span class="method">Core</span> (mean over seeds with 95% interval).
-        </p>
-      </div>
-      <div class="column is-half">
-        <div class="has-text-centered">
-          <img src="static/images/regrouped.png" class="figure-img" alt="Partition violation and accuracy of baselines trained as published and on regrouped questions, d3-lite.">
-        </div>
-        <p class="caption">
-          <b>Baselines trained as published and on our regrouped questions, d3-lite.</b>
-          Gray: trained on the original question, as published; orange: also trained on our regrouped questions (<sup>&dagger;</sup>).
-          Partition violation on all and on hard items, and Acc. (&times;100; means over 3 seeds).
-        </p>
-      </div>
-    </div>
+  <div class="r2">
+    <div class="card chart reveal"><h3>Five model sizes, 0.85B to 26B</h3><p class="sub">Gray: base model. Blue: <span class="sc">Core</span>, mean over seeds with 95% interval.</p>
+      <div class="ctl mini-sel" id="size-ctl"><button data-m="partition_tv/merge" class="on">Partition ↓</button><button data-m="H:partition_tv/merge">Hard items ↓</button><button data-m="acc_desc/all">Accuracy ↑</button></div>
+      <div id="size-chart"></div></div>
+    <div class="card chart reveal"><h3>Baselines on our regrouped questions</h3><p class="sub">d3-lite. Gray: trained as published. Orange: also trained on our regrouped questions. Blue line: <span class="sc">Core</span>.</p>
+      <div class="ctl mini-sel" id="reg-ctl"><button data-m="partition_tv/merge" class="on">Partition ↓</button><button data-m="H:partition_tv/merge">Hard items ↓</button><button data-m="acc_desc/all">Accuracy ↑</button></div>
+      <div id="reg-chart"></div></div>
   </div>
-</section>
+  <div class="card chart reveal" style="margin-bottom:18px">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;justify-content:space-between"><div><h3>Methods trained on the same items</h3><p class="sub" id="tbl-sub"></p></div>
+    <div class="mini-sel" id="tbl-ctl"><button data-t="lite" class="on">d3-lite · 0.85B</button><button data-t="flash">d3-flash · 8.4B</button></div></div>
+    <div class="tbl-wrap" id="tbl"></div>
+  </div>
+  <div class="r2">
+    <div class="card chart reveal"><h3>Merge wordings not seen in training</h3><p class="sub">Training uses “X or Y”. Partition violation on d3-lite (×100).</p><div id="word-chart"></div></div>
+    <div class="card chart reveal"><h3>Trained on another dataset</h3><p class="sub">Trained on 2,308 A-OKVQA items (COCO images, everyday questions), evaluated on our items. Partition violation, d3-lite (×100).</p><div id="xdata-chart"></div></div>
+  </div>
+</div></section>
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <div class="bibtex-wrap">
-      <button class="button is-small copy-btn" id="copyBib" type="button"><span class="icon"><i class="far fa-copy"></i></span><span>Copy</span></button>
-<pre><code id="bibtex">@misc{noh2026core,
+<section class="s" id="cite"><div class="wrap">
+  <div class="s-head reveal"><div class="eyebrow">05 · Cite</div><h2>BibTeX</h2></div>
+  <div class="cite reveal"><button class="copy" id="copy" type="button">Copy</button><code id="bibtex">@misc{noh2026core,
   title  = {When ``A or B'' Is Less Likely than A: Coherent Probabilities for Vision Decision Models},
   author = {Noh, Seongrae and Hong, SeongEun and Kang, HyeongYeop},
   year   = {2026},
   note   = {Preprint}
-}</code></pre>
-    </div>
-  </div>
-</section>
+}</code></div>
+</div></section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content has-text-centered">
-          <p>
-            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-            The website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+<footer><div class="wrap">
+  <div><b>Core</b> · Seongrae Noh, SeongEun Hong, HyeongYeop Kang · Korea University<br>Questions: <a href="mailto:rhosunr99@korea.ac.kr">rhosunr99@korea.ac.kr</a></div>
+  <div>Evaluation images belong to their benchmarks (CV-Bench, BLINK, RealWorldQA, CharXiv, InfographicVQA, Mind2Web, R-Bench).<br>Page content © 2026 the authors, CC BY 4.0.</div>
+</div></footer>
+<dialog class="lb" id="lb"><img id="lbimg" alt=""></dialog>
+<div class="tip" id="tip"></div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="app.js"></script>
 </body>
 </html>
