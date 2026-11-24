@@ -373,6 +373,11 @@ img {
   color: #E65100;
 }
 
+.pub-venue-badge.preprint {
+  background: #ECEFF1;
+  color: #455A64;
+}
+
 .pub-venue-badge.domestic {
   background: var(--accent-light);
   color: var(--accent);
