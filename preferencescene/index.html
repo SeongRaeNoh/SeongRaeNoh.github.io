@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PreferenceScene: Personalized Indoor Scene Synthesis from Feedback</title>
+<meta name="description" content="PreferenceScene keeps an explicit plan with one value for every design attribute of a room and revises the whole plan after each turn of brief feedback on rendered images of the room.">
+<!--META_START--><meta name="author" content="Seongrae Noh, RyunHa Lee, HyeongYeop Kang">
+<meta property="og:url" content="https://seongraenoh.github.io/preferencescene/">
+<meta property="og:image" content="https://seongraenoh.github.io/preferencescene/static/images/og.jpg">
+<link rel="canonical" href="https://seongraenoh.github.io/preferencescene/"><!--META_END-->
+<meta property="og:title" content="PreferenceScene: Personalized Indoor Scene Synthesis from Feedback">
+<meta property="og:description" content="Over three turns, a user sees rendered images of a 3D room and replies with brief feedback. PreferenceScene revises its plan of the whole room and reaches a preference match of 56.6% (Explicit form) and 49.6% (Implicit form), against at most 45.6% and 43.1% for six baselines.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20d%3D%22M16%204%2028%2010%2016%2016%204%2010z%22%20fill%3D%22%23e0782a%22%2F%3E%3Cpath%20d%3D%22M4%2010v12l12%206V16z%22%20fill%3D%22%232d6cd2%22%2F%3E%3Cpath%20d%3D%22M28%2010v12l-12%206V16z%22%20fill%3D%22%231d55ad%22%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;650;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="nav" id="nav"><div class="wrap">
+  <a class="brand" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 28 10 16 16 4 10z" fill="#e0782a"/><path d="M4 10v12l12 6V16z" fill="#2d6cd2"/><path d="M28 10v12l-12 6V16z" fill="#1d55ad"/></svg><span>PreferenceScene</span></a>
+  <div class="nav-links">
+    <a href="#video">Video</a><a href="#problem">Task</a><a href="#try">Follow an interaction</a><a href="#method">Method</a><a href="#results">Results</a><a href="#compare">Side by side</a><a href="#gallery">Gallery</a><a href="#cite">Cite</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div class="eyebrow"><i></i>Preprint · 2026</div>
+  <h1>Preference<span class="acc">Scene</span></h1>
+  <p class="subtitle">Personalized Indoor Scene Synthesis from Feedback</p>
+  <!--AUTHORS_START--><div class="authors"><a href="https://seongraenoh.github.io/">Seongrae Noh</a><span>RyunHa Lee</span><span>HyeongYeop Kang<sup>†</sup></span></div><div class="affil"><span>Korea University</span><span><sup>†</sup>Corresponding author</span></div><!--AUTHORS_END-->
+  <div class="links">
+    <!--PAPER_BUTTON_START--><span class="btn off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6M9 18h4"/></svg>Paper <small>soon</small></span><!--PAPER_BUTTON_END-->
+    <!--ARXIV_BUTTON_START--><span class="btn off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 4l14 16M19 4L5 20"/></svg>arXiv <small>soon</small></span><!--ARXIV_BUTTON_END-->
+    <a class="btn ghost" href="#video"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Video</a>
+    <!--CODE_BUTTON_START--><span class="btn off"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6a4.7 4.7 0 0 1 1.2-3.2c-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.3 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.2c0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>Code <small>soon</small></span><!--CODE_BUTTON_END-->
+    <a class="btn ghost" href="#cite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 7h4v4H8a3 3 0 0 0 3 3v2a5 5 0 0 1-5-5V7zM15 7h4v4h-3a3 3 0 0 0 3 3v2a5 5 0 0 1-5-5V7z"/></svg>BibTeX</a>
+  </div>
+
+  <div class="teaser reveal" id="teaser"></div>
+  <p class="tcap">Four simulated users of the test set and the final 3D scenes that PreferenceScene built for them after three turns of feedback. Header: a summary of the user's persona. Below each image: an excerpt of the user's instruction (“…” marks omitted words). Inset: the whole room. Click a scene to follow its interaction turn by turn.</p>
+
+  <p class="tagline reveal">A short instruction rarely conveys the room a person wants. <b>PreferenceScene</b> keeps one value for every design attribute of the room and, after each turn of <em>brief feedback on rendered images</em>, revises the whole plan, including the attributes that the feedback does not name.</p>
+</div></header>
+
+<section class="s" id="video"><div class="wrap">
+  <div class="s-head reveal"><div class="eyebrow">00 · Video</div><h2>The paper in three minutes</h2></div>
+  <div class="video-card reveal" id="vcard">
+    <video id="vid" preload="none" playsinline controls hidden><source src="static/video/preferencescene_video.mp4" type="video/mp4"></video>
+    <div class="poster" id="poster" role="button" tabindex="0" aria-label="Play the video">
+      <div class="viz">
+        <div style="width:45.6%;background:#b9b6af">best baseline · 45.6</div>
+        <div style="width:56.6%;background:#7fb0ff">PreferenceScene · 56.6</div>
+        <div class="vcap">pAMR (%), Explicit form, test set</div>
+      </div>
+      <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="pt">Preference<span>Scene</span></div>
+      <div class="ps">Narrated overview · one interaction, the task, the method and the results</div>
+      <div class="meta">▶ with sound · 3:06</div>
+    </div>
+  </div>
+  <div class="chapters" id="chapters"></div>
+</div></section>
+
+<section class="s" id="problem"><div class="wrap">
+  <div class="s-head reveal"><div class="eyebrow">01 · The task</div>
+    <h2>Preferences that the instruction does not state</h2>
+    <p>Many preferences surface only when a person sees a concrete room. In our task, a system shows a 3D room for three turns; the user sees only rendered images of it and replies with brief free-form feedback and a satisfaction score. The system must then deliver a final room that shows the user's hidden preferences.</p></div>
+  <div class="obs">
+    <div class="card reveal"><div class="big">4–6<small>/ 10</small></div>
+      <h3>The input states part of the preferences, or none</h3>
+      <p>Each user holds hidden values for ten design attributes of the room. The persona and instruction state four to six of them in the Explicit form and none in the Implicit form, where they only hint at the person's taste.</p>
+      <div class="mini"><div class="sqrow"><span>Explicit</span><div class="sq" id="sqE"></div></div><div class="sqrow"><span>Implicit</span><div class="sq" id="sqI"></div></div>
+      <div style="font-size:11.5px;color:var(--muted);margin-top:4px">blue: a hidden value stated in the input (example with five)</div></div></div>
+    <div class="card reveal"><div class="big" style="color:var(--user)">4–5<small>/ 10</small></div>
+      <h3>Feedback names only part of the room</h3>
+      <p>An LLM labeller finds that the feedback of one turn names four to five of the ten attributes, and that about a third of the hidden attributes are never named in an interaction.</p>
+      <div class="mini"><div class="sqrow"><span>turn 1</span><div class="sq" id="sqT1"></div></div><div class="sqrow"><span>turn 2</span><div class="sq" id="sqT2"></div></div><div class="sqrow"><span>turn 3</span><div class="sq" id="sqT3"></div></div>
+      <div style="font-size:11.5px;color:var(--muted);margin-top:4px">illustration · orange: named in that turn · hatched: never named</div></div></div>
+    <div class="card reveal"><div class="big" style="color:var(--base2)">47.8<small>%</small></div>
+      <h3>Published systems cannot change most parts of the room</h3>
+      <p>Given the hidden preferences directly as text, the five published text-to-scene baselines show at most 47.8% of them in their scenes: they at most pick wall and floor materials from a fixed library. PreferenceScene shows 59.4% in the same condition.</p>
+      <div class="mini" id="mini-oracle"></div></div>
+  </div>
+  <div class="figrow">
+    <figure class="fig reveal"><img src="static/images/instance.jpg" alt="An instance of the benchmark: instruction, persona and the reference scene built from the hidden values." loading="lazy">
+      <figcaption class="cap"><b>An instance and its reference scene.</b> The instruction and persona (shortened) are what a system receives. The reference scene is built directly from the hidden values; values such as the blush pink walls and the marble checkerboard floor appear nowhere in the input.</figcaption></figure>
+    <div class="card metricbox reveal">
+      <h3>How a scene is scored: pAMR</h3>
+      <p>The perceived attribute match rate is the share of the ten hidden values that a vision-language model (GLM-4.6V-Flash) recovers from two renders of the final scene, a cutaway view from above and an eye-level view.</p>
+      <div class="eqn">pAMR = (1/10) · Σ<sub>a</sub> 1[ answer of the evaluator for attribute a = hidden value of a ]</div>
+      <p>For each attribute, the evaluator answers one multiple-choice question whose options are all values of that attribute, once with the options in the given order and once reversed; pAMR averages the two answers. It is computed on images alone, so it applies to any system that outputs a scene.</p>
+      <div class="refbar"><span>reference scenes</span><div class="b" style="width:89.3%;background:var(--green)"></div><span class="n">89.3</span></div>
+      <div class="refbar"><span>random guess</span><div class="b" style="width:21.4%;background:var(--base)"></div><span class="n">21.4</span></div>
+      <p style="font-size:12.5px;margin:6px 0 0">Benchmark: ten room types, eight hidden profiles per room type, 320 instances (160 per form). All results on this page are on the 120 test instances per form, with four seeds per instance.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="s" id="try"><div class="wrap">
+  <div class="s-head reveal"><div class="eyebrow">02 · Follow an interaction</div>
+    <h2>Step through a real test interaction</h2>
+    <p>Pick a room type, a form and an interaction, then step from turn 1 to the final scene. You see the renders of each scene, the feedback and score that the simulated user wrote on it, the plan value of each attribute, and which of the user's hidden values the evaluator finds in the scene. Everything below is a stored output of the paper's test runs; nothing is generated in your browser.</p></div>
+  <div class="play-shell reveal">
+    <div class="fl-ctl">
+      <div class="seg" id="pool"><button data-p="featured" class="on">Featured</button><button data-p="random">Random draw</button></div>
+      <select id="room" aria-label="Room type"><option value="">All room types</option></select>
+      <div class="seg" id="form"><button data-f="" class="on">Both forms</button><button data-f="Explicit">Explicit</button><button data-f="Implicit">Implicit</button></div>
+      <div class="pnav">
+        <button class="icon-btn" id="prev" aria-label="Previous interaction"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="icon-btn" id="shuffle" aria-label="Random interaction"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></button>
+        <button class="icon-btn" id="next" aria-label="Next interaction"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <div class="thumbs" id="thumbs"></div>
+    <div class="ep-head" id="ephead"></div>
+    <div class="stages" id="stages"></div>
+    <div class="fl-main">
+      <div class="viewer">
+        <div class="vt"><span class="lab" id="vlab"></span><div class="seg" id="view"><button data-v="c" class="on">Cutaway</button><button data-v="e">Eye level</button></div></div>
+        <div class="vimg" id="vimg"><img id="imgA" alt=""><img id="imgB" class="off" alt=""><span class="badge" id="vbadge"></span></div>
+        <div class="bubble" id="bubble"></div>
+      </div>
+      <div class="prefs" id="prefs"></div>
+    </div>
+    <p class="fl-note" id="flnote"></p>
+  </div>
+</div></section>
+
+<section class="s" id="method"><div class="wrap">
+  <div class="s-head reveal"><div class="eyebrow">03 · Method</div>
+    <h2>An explicit plan of the whole room, revised after every turn</h2>
+    <p>PreferenceScene keeps its estimate of the user's preferences as a <b>plan</b>: one value, a short text such as “pale oak planks”, for each of the ten design attributes of the room. Every change of the plan shows in the room, because scene instantiation builds each value as its own part of the room. The example below is the interaction of the paper's method figure (Implicit form, dining room); every value and text in it is a stored output of that run.</p></div>
+  <div class="method reveal">
+    <div class="steps" id="steps"></div>
+    <div class="card stage" id="stage"></div>
+  </div>
+  <figure class="fig reveal" style="margin-top:22px"><img src="static/images/method.jpg" alt="Method figure: design plan, scene instantiation, user feedback, plan update, final scene." loading="lazy">
+    <figcaption class="cap"><b>Overview on the first turn of a test interaction</b> (Implicit form). (1) An LLM writes the design plan, one value for each design attribute. (2) Scene instantiation builds the plan as a 3D scene. (3) The user answers with feedback and a score. (4) The LLM infers the user's preferences and rewrites the plan; “new” marks a value outside the candidates. After K = 3 turns, one more LLM call furnishes the final scene.</figcaption></figure>
+  <div class="figpair">
+    <div class="card metricbox reveal"><h3>What each LLM call sees</h3>
+      <p><b>Candidates (once):</b> room type, instruction and persona; the LLM lists the visible design aspects of the room with twelve candidate values each, six that it considers most likely for this person and six other common choices. Jev, a decision model that returns a probability for every option of a multiple-choice question, assigns each aspect to its most probable attribute if that probability is at least 0.5.</p>
+      <p><b>Plan update (after every turn):</b> the input, the candidate sets and, for every earlier turn, the plan, a description of what the scene contained, the feedback and the score. A value is either a candidate or a <i>new value</i> written in the same form.</p>
+      <p><b>Furnishing (once):</b> the final plan; the reply adds furniture, objects on furniture tops and pieces for the walls in the free space and lists the object types that each value rules out.</p>
+      <p style="margin:0">An interaction makes six LLM calls and about 25 requests to Jev. No component reads the hidden values or the value sets of the benchmark.</p></div>
+    <figure class="fig reveal"><img src="static/images/space.jpg" alt="How the plan moves after the feedback of turn 1." loading="lazy">
+      <figcaption class="cap"><b>How the plan moves after the feedback of turn 1</b> (same interaction). The walls and the floor, which the feedback names, receive new values; the window, which it does not name, moves to a candidate that fits the inferred warmth.</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="s" id="results"><div class="wrap">
+  <div class="s-head reveal"><div class="eyebrow">04 · Results</div>
+    <h2>Higher preference match than every baseline</h2>
+    <p>Test set: 120 instances per form, four seeds each, three turns. Baselines: five published text-to-scene methods (Holodeck, LayoutGPT, I-Design, LayoutVLM, R3L), each run in the same interaction with the history as input, and Holodeck-Edit, which edits its previous scene in every turn. All systems use the same LLM (Gemma-4-31B), room shells, 6,793 Objaverse assets, renderer and cameras.</p></div>
+  <div class="tiles">
+    <div class="card tile reveal"><div class="k">pAMR · Explicit form</div><div class="v"><span class="from">45.6</span><span class="arr">→</span><span class="to">56.6</span></div><div class="s">Best baseline (Holodeck-Edit) and PreferenceScene, % of hidden values found in the final scene.</div></div>
+    <div class="card tile reveal"><div class="k">pAMR · Implicit form</div><div class="v"><span class="from">43.1</span><span class="arr">→</span><span class="to">49.6</span></div><div class="s">Best baseline (LayoutVLM) and PreferenceScene.</div></div>
+    <div class="card tile reveal"><div class="k">Turn 1 → final · Implicit</div><div class="v"><span class="from">37.5</span><span class="arr">→</span><span class="to">49.6</span></div><div class="s">+12.1 points over the interaction; the baselines gain at most 9.7.</div></div>
+    <div class="card tile reveal"><div class="k">User study · 720 trials</div><div class="v"><span class="to">79.7%</span></div><div class="s">of the answers chose PreferenceScene's scene for the person's preferences; 80.8% for the design.</div></div>
+  </div>
+  <div class="r2">
+    <div class="card chart reveal"><h3>Preference match of the final scene</h3><p class="sub">pAMR (%), mean ± standard deviation over four seeds. Oracle: one scene generated from the Explicit input and the hidden values, one seed. LayoutGPT: bedrooms and living rooms only.</p>
+      <div class="ctl mini-sel" id="main-ctl"><button data-k="2" class="on">Explicit</button><button data-k="0">Implicit</button><button data-k="4">Oracle</button></div>
+      <div id="main-chart"></div></div>
+    <div class="card chart reveal"><h3>Match after each turn</h3><p class="sub">pAMR (%) of the scene of each turn and of the final scene, mean over four seeds. Scenes of every turn are scored after the furnishing step.</p>
+      <div class="ctl mini-sel" id="turn-ctl"><button data-f="Implicit" class="on">Implicit</button><button data-f="Explicit">Explicit</button></div>
+      <div id="turn-chart"></div><div class="lg2" id="turn-lg"></div></div>
+  </div>
+  <div class="r2 hsrow">
+    <div class="card chart reveal"><h3>User study: PreferenceScene against each system</h3><p class="sub">20 participants, 36 trials each. In each trial they saw the final scenes of PreferenceScene and one baseline for the same instance, without names and in random order. Bars: share of answers that chose PreferenceScene, with 95% Wilson intervals. Every rate differs from 50% (two-sided binomial test, Benjamini-Hochberg correction over 12 tests, p &lt; 0.0001).</p>
+      <div class="ctl mini-sel" id="hs-ctl"><button data-k="0" class="on">Matches the preferences</button><button data-k="2">Better designed</button></div>
+      <div id="hs-chart"></div></div>
+    <div class="card chart reveal"><h3>Scene quality and cost</h3><p class="sub" id="q-sub"></p>
+      <div class="ctl mini-sel" id="q-ctl"><button data-k="vlm" class="on">Evaluator scores</button><button data-k="hum">Participant ratings</button></div>
+      <div class="tbl-wrap" id="q-tbl"></div></div>
+  </div>
+  <div class="r2">
+    <div class="card chart reveal"><h3>Ablations</h3><p class="sub">Dining-room and office test instances (24 per form), pAMR (%), mean ± standard deviation over four seeds.</p><div id="abl-chart"></div>
+      <p class="cap">No iteration scores the scene of the initial plan, so its distance to the full method is the whole effect of the feedback. Without older turns, the plan update reads only the latest turn. Without new values, a value outside the candidates is rejected; only about one value in six of the full method's final plans is new (16.2% and 16.6%).</p></div>
+    <div class="card chart reveal"><h3>Parts of the room that the feedback never names</h3><p class="sub">pAMR (%) on the hidden attributes that no turn of the interaction names, as found by the LLM labeller.</p><div id="unnamed-chart"></div>
+      <p class="cap" style="margin-top:14px"><b>Other evaluators.</b> With a second evaluator from another model family (Ministral-3-14B), PreferenceScene scores 52.5 (Explicit) and 46.5 (Implicit), against at most 44.9 and 43.0 for the baselines. With an evaluator variant that may answer “not visible”, it scores 47.8 and 40.9, against at most 35.8 and 33.4.</p></div>
+  </div>
+</div></section>
+
+<section class="s" id="compare"><div class="wrap">
+  <div class="s-head reveal"><div class="eyebrow">05 · Side by side</div>
+    <h2>Final scenes of five systems for the same user</h2>
+    <p>Seven test instances: the three of the paper's qualitative figure and four more of the supplementary material. Each system ran its own three-turn interaction with the same simulated user; the images show the final scenes. The reference scene is built directly from the user's hidden values, which no system sees. The figures show four of the six baselines; LayoutGPT and Holodeck-Edit are not in them. Click an image to enlarge it.</p></div>
+  <div class="cmp-shell reveal">
+    <div class="chips" id="cmp-tabs" role="tablist" aria-label="Test instance"></div>
+    <div class="cmp-head" id="cmp-head"></div>
+    <div class="cmp-grid" id="cmp-grid"></div>
+  </div>
+</div></section>
+
+<section class="s" id="gallery"><div class="wrap">
+  <div class="s-head reveal"><div class="eyebrow">06 · Gallery</div>
+    <h2>Final scenes of ten room types</h2>
+    <p>One test interaction per room type, the gallery of the paper's supplementary material: five in the Explicit form and five in the Implicit form. Hover or tap to see the cutaway view; click to follow the interaction. The number is the pAMR of the final scene.</p></div>
+  <div class="gal reveal" id="gal"></div>
+</div></section>
+
+<section class="s" id="cite"><div class="wrap">
+  <div class="s-head reveal"><div class="eyebrow">07 · Cite</div><h2>BibTeX</h2></div>
+  <div class="cite reveal"><button class="copy" id="copy" type="button">Copy</button><code id="bibtex"><!--BIBTEX_START-->@article{noh2026preferencescene,
+  title   = {PreferenceScene: Personalized Indoor Scene Synthesis from Feedback},
+  author  = {Noh, Seongrae and Lee, RyunHa and Kang, HyeongYeop},
+  journal = {arXiv preprint},
+  year    = {2026}
+}<!--BIBTEX_END--></code></div>
+</div></section>
+
+<footer><div class="wrap">
+  <div><!--FOOTER_START--><b>PreferenceScene</b> · Seongrae Noh, RyunHa Lee, HyeongYeop Kang · Korea University<!--FOOTER_END--></div>
+  <div>3D assets: Objaverse. Materials: ambientCG. Renders: Blender Cycles.<br>Page content © 2026 the authors, CC BY 4.0.</div>
+</div></footer>
+<dialog class="lb" id="lb"><img id="lbimg" alt=""></dialog>
+<div class="tip" id="tip"></div>
+<script defer src="app.js"></script>
+</body>
+</html>

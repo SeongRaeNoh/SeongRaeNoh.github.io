@@ -1,0 +1,229 @@
+{
+"note": "Cells of the paper's qualitative figures; built by page_tools/build_compare.py",
+"cols": [
+{
+"k": "holodeck",
+"name": "Holodeck"
+},
+{
+"k": "idesign",
+"name": "I-Design"
+},
+{
+"k": "layoutvlm",
+"name": "LayoutVLM"
+},
+{
+"k": "r3l",
+"name": "R3L"
+},
+{
+"k": "ours",
+"name": "PreferenceScene"
+},
+{
+"k": "gold",
+"name": "Reference scene"
+}
+],
+"rows": [
+{
+"slot": "sE1",
+"fig": "main",
+"iid": "kitchen_g6_p2",
+"seed": 0,
+"form": "Explicit",
+"room": "kitchen",
+"room_name": "Kitchen",
+"who": "Retired librarian, 67",
+"excerpt": [
+"plain white cabinet fronts, glass-front wall cabinets for my dishes",
+"soft pink walls, wide wooden floorboards",
+"pendant lamps in the evening"
+],
+"hidden": [],
+"img": {
+"holodeck": "static/images/cmp/sE1_holodeck.jpg",
+"idesign": "static/images/cmp/sE1_idesign.jpg",
+"layoutvlm": "static/images/cmp/sE1_layoutvlm.jpg",
+"r3l": "static/images/cmp/sE1_r3l.jpg",
+"ours": "static/images/cmp/sE1_ours.jpg",
+"gold": "static/images/cmp/sE1_gold.jpg"
+}
+},
+{
+"slot": "sI2",
+"fig": "main",
+"iid": "bathroom_g6_p2",
+"seed": 0,
+"form": "Implicit",
+"room": "bathroom",
+"room_name": "Bathroom",
+"who": "Theater producer, 58",
+"excerpt": [
+"a little drama and a very finished feel, almost like a private suite"
+],
+"hidden": [
+{
+"attr": "wall color",
+"value": "Deep Green"
+},
+{
+"attr": "shower configuration",
+"value": "Black-Framed Glass Enclosure"
+},
+{
+"attr": "vanity layout",
+"value": "Built-In Vanity Cabinet"
+}
+],
+"img": {
+"holodeck": "static/images/cmp/sI2_holodeck.jpg",
+"idesign": "static/images/cmp/sI2_idesign.jpg",
+"layoutvlm": "static/images/cmp/sI2_layoutvlm.jpg",
+"r3l": "static/images/cmp/sI2_r3l.jpg",
+"ours": "static/images/cmp/sI2_ours.jpg",
+"gold": "static/images/cmp/sI2_gold.jpg"
+}
+},
+{
+"slot": "sE2",
+"fig": "main",
+"iid": "office_g4_p2",
+"seed": 0,
+"form": "Explicit",
+"room": "office",
+"room_name": "Office",
+"who": "University lecturer and songwriter, 46",
+"excerpt": [
+"soft greyish blue walls, the back wall in narrow wood slats",
+"the two facing desks, a low sofa area"
+],
+"hidden": [],
+"img": {
+"holodeck": "static/images/cmp/sE2_holodeck.jpg",
+"idesign": "static/images/cmp/sE2_idesign.jpg",
+"layoutvlm": "static/images/cmp/sE2_layoutvlm.jpg",
+"r3l": "static/images/cmp/sE2_r3l.jpg",
+"ours": "static/images/cmp/sE2_ours.jpg",
+"gold": "static/images/cmp/sE2_gold.jpg"
+}
+},
+{
+"slot": "qE1",
+"fig": "supp",
+"iid": "bedroom_g8_p2",
+"seed": 1,
+"form": "Explicit",
+"room": "bedroom",
+"room_name": "Bedroom",
+"who": "Barrister and part-time lecturer, 58",
+"excerpt": [
+"dark forest green walls, the herringbone floor",
+"the wood panelling on the back wall, the amber lamps, the shuttered window"
+],
+"hidden": [],
+"img": {
+"holodeck": "static/images/cmp/qE1_holodeck.jpg",
+"idesign": "static/images/cmp/qE1_idesign.jpg",
+"layoutvlm": "static/images/cmp/qE1_layoutvlm.jpg",
+"r3l": "static/images/cmp/qE1_r3l.jpg",
+"ours": "static/images/cmp/qE1_ours.jpg",
+"gold": "static/images/cmp/qE1_gold.jpg"
+}
+},
+{
+"slot": "qE2",
+"fig": "supp",
+"iid": "gallery_g3_p1",
+"seed": 0,
+"form": "Explicit",
+"room": "gallery",
+"room_name": "Gallery",
+"who": "Textile artist and workshop teacher, 29",
+"excerpt": [
+"warm clay-colored walls and that polished terrazzo floor",
+"lit only by amber floor lamps in the evening"
+],
+"hidden": [],
+"img": {
+"holodeck": "static/images/cmp/qE2_holodeck.jpg",
+"idesign": "static/images/cmp/qE2_idesign.jpg",
+"layoutvlm": "static/images/cmp/qE2_layoutvlm.jpg",
+"r3l": "static/images/cmp/qE2_r3l.jpg",
+"ours": "static/images/cmp/qE2_ours.jpg",
+"gold": "static/images/cmp/qE2_gold.jpg"
+}
+},
+{
+"slot": "sI1",
+"fig": "supp",
+"iid": "children_room_g5_p2",
+"seed": 0,
+"form": "Implicit",
+"room": "children_room",
+"room_name": "Children's room",
+"who": "Landscape photographer, 52",
+"excerpt": [
+"open, calm, and connected to the outdoors"
+],
+"hidden": [
+{
+"attr": "feature wall",
+"value": "Landscape Mural"
+},
+{
+"attr": "flooring type",
+"value": "Cork Floor"
+},
+{
+"attr": "bed type",
+"value": "Canopy Bed"
+}
+],
+"img": {
+"holodeck": "static/images/cmp/sI1_holodeck.jpg",
+"idesign": "static/images/cmp/sI1_idesign.jpg",
+"layoutvlm": "static/images/cmp/sI1_layoutvlm.jpg",
+"r3l": "static/images/cmp/sI1_r3l.jpg",
+"ours": "static/images/cmp/sI1_ours.jpg",
+"gold": "static/images/cmp/sI1_gold.jpg"
+}
+},
+{
+"slot": "qI2",
+"fig": "supp",
+"iid": "waiting_room_g7_p1",
+"seed": 0,
+"form": "Implicit",
+"room": "waiting_room",
+"room_name": "Waiting room",
+"who": "Primary school art teacher, 37",
+"excerpt": [
+"friendly and upbeat, with enough color and softness"
+],
+"hidden": [
+{
+"attr": "wall color",
+"value": "Blush Pink"
+},
+{
+"attr": "upholstery",
+"value": "Mustard Yellow"
+},
+{
+"attr": "flooring type",
+"value": "Herringbone Wood"
+}
+],
+"img": {
+"holodeck": "static/images/cmp/qI2_holodeck.jpg",
+"idesign": "static/images/cmp/qI2_idesign.jpg",
+"layoutvlm": "static/images/cmp/qI2_layoutvlm.jpg",
+"r3l": "static/images/cmp/qI2_r3l.jpg",
+"ours": "static/images/cmp/qI2_ours.jpg",
+"gold": "static/images/cmp/qI2_gold.jpg"
+}
+}
+]
+}
